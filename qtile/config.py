@@ -159,7 +159,7 @@ keys = [
     Key([mod, "shift"], 'b', lazy.spawn("tkfeh")),
     Key([mod], "space", lazy.spawn(Term2)),
     Key([mod, "shift"], "a", lazy.spawn("i3lock -c 000000")),
-    Key([mod], "KP_Subtract", lazy.spawn("blurlock")),
+    Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
     Key([mod], "KP_Add", lazy.spawn("lock")),
     Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod], "KP_Enter", lazy.spawn(myTerm)),
@@ -183,7 +183,7 @@ keys = [
 ### XSS-LOCK
     KeyChord([mod], "t",[
         Key([], "x", lazy.spawn("killall xss-lock")),
-        Key([], "r", lazy.spawn("xss-lock --transfer-sleep-lock -- blurlock --nofork")),
+        Key([], "r", lazy.spawn("xss-lock --transfer-sleep-lock -- i3lock -c 00000000 --nofork")),
             ]),
 ### DMSCRIPTS
     KeyChord([mod], "x",[
