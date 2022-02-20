@@ -618,14 +618,6 @@ else:
                     linewidth=0,
                 ),
                 widget.Spacer(),
-            # widget.WindowName(
-            #     fontsize=16,
-            #     empty_group_string='Qtile Desktop',
-            #     format='{name}',
-            #     font="space mono for powerline bold",
-            #     foreground=colors[1],
-            #     **decor9
-            # ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
