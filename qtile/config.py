@@ -329,12 +329,32 @@ keys.extend([
 #     Key([mod, 'shift'], 'p', lazy.group['f'].toscreen() and lazy.window.togroup('f', switch_group=True)),
 # ])
 
+border=dict(
+    border_focus="#aaeedd",
+    border_normal="#4c566a"
+)
 layouts = [
-    layout.Tile     (margin=8 , border_width=2, border_focus="#aaeedd", border_normal="#4c566a", ratio=0.55, shift_windows=True),
-    layout.MonadTall(margin=15, border_width=2, border_focus="#aaeedd", border_normal="#4c566a", ratio=0.55),
-    layout.MonadWide(margin=15, border_width=2, border_focus="#aaeedd", border_normal="#4c566a", ratio=0.55),
-    # layout.Bsp      (margin=8, border_width=0, border_focus="#bb94cc", border_normal="#4c566a", fair=False),
+    layout.Tile(
+        margin=8,
+        margin_on_single=False,
+        border_on_single=False,
+        border_width=2,
+        ratio=0.55,
+        shift_windows=True,
+        **border
+    ),
+    layout.MonadWide(
+        margin=15,
+        border_width=2,
+        ratio=0.55,
+        **border
+    ),
+    layout.Zoomy(
+        columnwidth=300,
+        margin=8,
+    ),
     layout.Max(),
+
 ]
 
 colors =  [
@@ -695,6 +715,7 @@ else:
                     charge_char='',
                     discharge_char='',
                     format=' {char} {percent:2.0%} ',
+
                     **decor7
                 ),
             ],
@@ -702,16 +723,9 @@ else:
                 background=colors[0],
                 margin=[4,6,10,6],
                 # margin=[10,6,4,6],
-                # margin=[4,4,6,4],
-                # opacity=0.92,
             ),
         ),
     ]
-
-
-#############################################
-############# AUTOSTART #####################
-#############################################
 
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
@@ -728,8 +742,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
     border_width=2,
-    border_focus="#aaeedd",
-    border_normal="#4c566a",
+    **border,
     float_rules=[
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
