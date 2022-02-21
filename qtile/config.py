@@ -357,7 +357,7 @@ layouts = [
 
 ]
 
-colors =  [
+colours =  [
         ["#00000000"],     # color 0
         ["#2e3440"], # color 1
         ["#adefd1"], # color 2
@@ -367,31 +367,19 @@ colors =  [
         ["#ffb18f"], # color 6
         ["#aec597"], # color 7
         ["#B591B0"], # color 8
-        ["#0ee9af"],
+        ["#0ee9af"], # color 9
         ["#9ED9CC"]] # color 8
 
 widget_defaults = dict(
     font='space mono for powerline bold',
     fontsize=16,
     padding=3,
-    foreground=colors[1],
+    foreground=colours[1],
 )
 extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
         RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0,)
-    ],
-    "padding": 5,
-}
-decor13 = {
-    "decorations": [
-        RectDecoration(colour=colors[1], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor1 = {
-    "decorations": [
-        RectDecoration(colour=colors[10], radius=13, filled=True, padding_y=0)
     ],
     "padding": 5,
 }
@@ -415,13 +403,13 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     padding_y=9,
                     padding_x=4,
                     borderwidth=7,
-                    inactive=colors[4],
-                    active=colors[7],
+                    inactive=colours[4],
+                    active=colours[7],
                     rounded=True,
-                    highlight_color=colors[4],
+                    highlight_color=colours[4],
                     highlight_method="text",
-                    this_current_screen_border=colors[9],
-                    block_highlight_text_color=colors[1],
+                    this_current_screen_border=colours[9],
+                    block_highlight_text_color=colours[1],
                     **decor,
                 ),
                 widget.Sep(
@@ -439,21 +427,15 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     padding=8,
                     linewidth=0,
                 ),
+
                 widget.Spacer(),
-            # widget.WindowName(
-            #     fontsize=16,
-            #     empty_group_string='Qtile Desktop',
-            #     format='{name}',
-            #     font="space mono for powerline bold",
-            #     foreground=colors[1],
-            #     **decor9
-            # ),
+
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.CPU(
-                    background=colors[10],
+                    background=colours[10],
                     format='   {load_percent}% ',
                     **decor,
                 ),
@@ -462,7 +444,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.Memory(
-                    background=colors[7],
+                    background=colours[7],
                     measure_mem='G',
                     measure_swap='G',
                     format='  {MemUsed: .2f} GB ',
@@ -474,7 +456,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 ),
                 widget.Memory(
                     measure_mem='G',
-                    background=colors[3],
+                    background=colours[3],
                     measure_swap='G',
                     format=' {SwapUsed: .2f} GB ',
                     **decor,
@@ -486,7 +468,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 widget.PulseVolume(
                     mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
                     update_interval=0.001,
-                    background=colors[2],
+                    background=colours[2],
                     **decor2
                 ),
                 widget.Sep(
@@ -494,13 +476,13 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.CheckUpdates(
-                    colour_have_updates=colors[1],
-                    colour_no_updates=colors[1],
+                    colour_have_updates=colours[1],
+                    colour_no_updates=colours[1],
                     display_format='  {updates} ',
                     distro='Arch',
                     no_update_string='  N/A ',
                     update_interval=1,
-                    background=colors[4],
+                    background=colours[4],
                     **decor,
                 ),
                 widget.Sep(
@@ -508,7 +490,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colors[5],
+                    background=colours[5],
                     format='  %d %b, %a ',
                     **decor,
                 ),
@@ -517,7 +499,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colors[6],
+                    background=colours[6],
                     format='  %I:%M %p ',
                     **decor,
                 ),
@@ -526,8 +508,8 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.Systray(
-                    background=colors[0],
-                    foreground=colors[8],
+                    background=colours[0],
+                    foreground=colours[8],
                     icon_size=20,
                     padding=4,
                 ),
@@ -536,12 +518,12 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.CapsNumLockIndicator(
-                    background=colors[9],
+                    background=colours[9],
                     **decor
                 ),
             ],
                 38,
-                background=colors[0],
+                background=colours[0],
                 margin=[4,6,10,6],
                 # margin=[10,6,4,6],
                 # opacity=0.92,
@@ -562,13 +544,13 @@ else:
                     padding_y=9,
                     padding_x=4,
                     borderwidth=7,
-                    inactive=colors[4],
-                    active=colors[7],
+                    inactive=colours[4],
+                    active=colours[7],
                     rounded=True,
-                    highlight_color=colors[4],
+                    highlight_color=colours[4],
                     highlight_method="text",
-                    this_current_screen_border=colors[9],
-                    block_highlight_text_color=colors[1],
+                    this_current_screen_border=colours[9],
+                    block_highlight_text_color=colours[1],
                     **decor,
                 ),
                 widget.Sep(
@@ -586,21 +568,15 @@ else:
                     padding=8,
                     linewidth=0,
                 ),
+
                 widget.Spacer(),
-            # widget.WindowName(
-            #     fontsize=16,
-            #     empty_group_string='Qtile Desktop',
-            #     format='{name}',
-            #     font="space mono for powerline bold",
-            #     foreground=colors[1],
-            #     **decor9
-            # ),
+
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.CPU(
-                    background=colors[10],
+                    background=colours[10],
                     format='   {load_percent}% ',
                     **decor,
                 ),
@@ -609,7 +585,7 @@ else:
                     linewidth=0,
                 ),
                 widget.Memory(
-                    background=colors[7],
+                    background=colours[7],
                     measure_mem='G',
                     measure_swap='G',
                     format='  {MemUsed: .2f} GB ',
@@ -621,7 +597,7 @@ else:
                 ),
                 widget.Memory(
                     measure_mem='G',
-                    background=colors[3],
+                    background=colours[3],
                     measure_swap='G',
                     format=' {SwapUsed: .2f} GB ',
                     **decor,
@@ -633,7 +609,7 @@ else:
                 widget.PulseVolume(
                     mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
                     update_interval=0.001,
-                    background=colors[2],
+                    background=colours[2],
                     **decor2
                 ),
                 widget.Sep(
@@ -641,13 +617,13 @@ else:
                     linewidth=0,
                 ),
                 widget.CheckUpdates(
-                    colour_have_updates=colors[1],
-                    colour_no_updates=colors[1],
+                    colour_have_updates=colours[1],
+                    colour_no_updates=colours[1],
                     display_format='  {updates} ',
                     distro='Arch',
                     no_update_string='  N/A ',
                     update_interval=1,
-                    background=colors[4],
+                    background=colours[4],
                     **decor,
                 ),
                 widget.Sep(
@@ -655,7 +631,7 @@ else:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colors[5],
+                    background=colours[5],
                     format='  %d %b, %a ',
                     **decor,
                 ),
@@ -664,7 +640,7 @@ else:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colors[6],
+                    background=colours[6],
                     format='  %I:%M %p ',
                     **decor,
                 ),
@@ -673,8 +649,8 @@ else:
                     linewidth=0,
                 ),
                 widget.Systray(
-                    background=colors[0],
-                    foreground=colors[8],
+                    background=colours[0],
+                    foreground=colours[8],
                     icon_size=20,
                     padding=4,
                 ),
@@ -685,8 +661,8 @@ else:
                 widget.Battery(
                     low_percentage=0.2,
                     low_foreground="#ff0000",
-                    low_background=colors[4],
-                    background=colors[9],
+                    low_background=colours[4],
+                    background=colours[9],
                     update_interval=1,
                     charge_char='',
                     discharge_char='',
@@ -695,7 +671,7 @@ else:
                 ),
             ],
                 36,
-                background=colors[0],
+                background=colours[0],
                 margin=[4,6,10,6],
                 # margin=[10,6,4,6],
             ),
