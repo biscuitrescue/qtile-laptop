@@ -133,9 +133,7 @@ keys = [
     # Key([mod], "z", lazy.layout.toggle_split()),
     Key([mod], "z", lazy.spawn("killall zoom")),
 
-
-
-# Toggle between different layouts as defined below
+    Key([mod], "b", lazy.hide_show_bar()),
     Key([mod], "Tab", lazy.next_layout()),
     Key([mod], "a", lazy.prev_layout()),
     Key([mod], "q", lazy.window.kill()),
@@ -156,7 +154,6 @@ keys = [
 ############## APPLICATIONS ###################
 ###############################################
 
-    Key([mod, "shift"], 'b', lazy.spawn("tkfeh")),
     Key([mod], "space", lazy.spawn(Term2)),
     Key([mod, "shift"], "a", lazy.spawn("i3lock -c 000000")),
     Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
@@ -672,7 +669,7 @@ else:
             ],
                 36,
                 background=colours[0],
-                margin=[4,6,10,6],
+                margin=[4,6,6,6],
                 # margin=[10,6,4,6],
             ),
         ),
