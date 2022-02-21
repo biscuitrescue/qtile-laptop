@@ -370,7 +370,7 @@ colours =  [
 if len(os.listdir("/sys/class/power_supply"))==0:
     widget_defaults = dict(
         font='space mono for powerline bold',
-        fontsize=14,
+        fontsize=13,
         padding=3,
         foreground=colours[1],
     )
@@ -527,7 +527,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     **decor
                 ),
             ],
-                38,
+                33,
                 background=colours[0],
                 margin=[4,6,10,6],
                 # margin=[10,6,4,6],
