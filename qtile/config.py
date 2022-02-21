@@ -490,7 +490,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colours[5],
+                    background=colours[8],
                     format='  %d %b, %a ',
                     **decor,
                 ),
@@ -631,7 +631,7 @@ else:
                     linewidth=0,
                 ),
                 widget.Clock(
-                    background=colours[5],
+                    background=colours[8],
                     format='  %d %b, %a ',
                     **decor,
                 ),
