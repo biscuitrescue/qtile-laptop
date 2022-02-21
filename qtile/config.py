@@ -379,7 +379,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
-        RectDecoration(colour="#282c3f95", radius=13, filled=True, padding_y=0)
+        RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0,)
     ],
     "padding": 5,
 }
@@ -397,51 +397,9 @@ decor1 = {
 }
 decor2 = {
     "decorations": [
-        RectDecoration(colour=colors[7], radius=13, filled=True, padding_y=0)
+        RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0)
     ],
-    "padding": 5,
-}
-decor3 = {
-    "decorations": [
-        RectDecoration(colour=colors[3], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor4 = {
-    "decorations": [
-        RectDecoration(colour=colors[2], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 15,
-}
-decor5 = {
-    "decorations": [
-        RectDecoration(colour=colors[8], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor6 = {
-    "decorations": [
-        RectDecoration(colour=colors[6], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor7 = {
-    "decorations": [
-        RectDecoration(colour=colors[9], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor8 = {
-    "decorations": [
-        RectDecoration(colour=colors[4], radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
-}
-decor9 = {
-    "decorations": [
-        RectDecoration(colour="#81a1c1", radius=13, filled=True, padding_y=0)
-    ],
-    "padding": 5,
+    "padding": 10,
 }
 if len(os.listdir("/sys/class/power_supply"))==0:
     screens = [
@@ -450,6 +408,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
             [
                 widget.GroupBox(
                     font="space mono for powerline",
+                    background="#282c3485",
                     fontsize=16,
                     margin_y=4,
                     margin_x=5,
@@ -472,6 +431,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 widget.CurrentLayoutIcon(
                     custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
                     scale=0.4,
+                    background="#282c3485",
                     **decor,
                 ),
 
@@ -493,19 +453,20 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.CPU(
-                    background=colors[0],
+                    background=colors[10],
                     format='   {load_percent}% ',
-                    **decor1,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Memory(
+                    background=colors[7],
                     measure_mem='G',
                     measure_swap='G',
                     format='  {MemUsed: .2f} GB ',
-                    **decor2,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -513,9 +474,10 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 ),
                 widget.Memory(
                     measure_mem='G',
+                    background=colors[3],
                     measure_swap='G',
                     format=' {SwapUsed: .2f} GB ',
-                    **decor3,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -524,7 +486,8 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 widget.PulseVolume(
                     mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
                     update_interval=0.001,
-                    **decor4
+                    background=colors[2],
+                    **decor2
                 ),
                 widget.Sep(
                     padding=8,
@@ -537,23 +500,26 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     distro='Arch',
                     no_update_string='  N/A ',
                     update_interval=1,
-                    **decor8,
+                    background=colors[4],
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Clock(
+                    background=colors[5],
                     format='  %d %b, %a ',
-                    **decor5,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Clock(
+                    background=colors[6],
                     format='  %I:%M %p ',
-                    **decor6,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -570,7 +536,8 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                     linewidth=0,
                 ),
                 widget.CapsNumLockIndicator(
-                    **decor7
+                    background=colors[9],
+                    **decor
                 ),
             ],
                 38,
@@ -588,6 +555,7 @@ else:
             [
                 widget.GroupBox(
                     font="space mono for powerline",
+                    background="#282c3485",
                     fontsize=16,
                     margin_y=4,
                     margin_x=5,
@@ -610,6 +578,7 @@ else:
                 widget.CurrentLayoutIcon(
                     custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
                     scale=0.4,
+                    background="#282c3485",
                     **decor,
                 ),
 
@@ -618,24 +587,33 @@ else:
                     linewidth=0,
                 ),
                 widget.Spacer(),
+            # widget.WindowName(
+            #     fontsize=16,
+            #     empty_group_string='Qtile Desktop',
+            #     format='{name}',
+            #     font="space mono for powerline bold",
+            #     foreground=colors[1],
+            #     **decor9
+            # ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.CPU(
-                    background=colors[0],
+                    background=colors[10],
                     format='   {load_percent}% ',
-                    **decor1,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Memory(
+                    background=colors[7],
                     measure_mem='G',
                     measure_swap='G',
                     format='  {MemUsed: .2f} GB ',
-                    **decor2,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -643,9 +621,10 @@ else:
                 ),
                 widget.Memory(
                     measure_mem='G',
+                    background=colors[3],
                     measure_swap='G',
                     format=' {SwapUsed: .2f} GB ',
-                    **decor3,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -654,7 +633,8 @@ else:
                 widget.PulseVolume(
                     mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
                     update_interval=0.001,
-                    **decor4
+                    background=colors[2],
+                    **decor2
                 ),
                 widget.Sep(
                     padding=8,
@@ -667,23 +647,26 @@ else:
                     distro='Arch',
                     no_update_string='  N/A ',
                     update_interval=1,
-                    **decor8,
+                    background=colors[4],
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Clock(
+                    background=colors[5],
                     format='  %d %b, %a ',
-                    **decor5,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
                     linewidth=0,
                 ),
                 widget.Clock(
+                    background=colors[6],
                     format='  %I:%M %p ',
-                    **decor6,
+                    **decor,
                 ),
                 widget.Sep(
                     padding=8,
@@ -702,13 +685,13 @@ else:
                 widget.Battery(
                     low_percentage=0.2,
                     low_foreground="#ff0000",
-                    # low_background=colors[4],
+                    low_background=colors[4],
+                    background=colors[9],
                     update_interval=1,
                     charge_char='',
                     discharge_char='',
                     format=' {char} {percent:2.0%} ',
-
-                    **decor7
+                    **decor,
                 ),
             ],
                 36,
