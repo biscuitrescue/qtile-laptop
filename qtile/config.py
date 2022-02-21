@@ -367,12 +367,21 @@ colours =  [
         ["#0ee9af"], # color 9
         ["#9ED9CC"]] # color 8
 
-widget_defaults = dict(
-    font='space mono for powerline bold',
-    fontsize=16,
-    padding=3,
-    foreground=colours[1],
-)
+if len(os.listdir("/sys/class/power_supply"))==0:
+    widget_defaults = dict(
+        font='space mono for powerline bold',
+        fontsize=14,
+        padding=3,
+        foreground=colours[1],
+    )
+else:
+    widget_defaults = dict(
+        font='space mono for powerline bold',
+        fontsize=16,
+        padding=3,
+        foreground=colours[1],
+    )
+
 extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
@@ -394,7 +403,6 @@ if len(os.listdir("/sys/class/power_supply"))==0:
                 widget.GroupBox(
                     font="space mono for powerline",
                     background="#282c3485",
-                    fontsize=16,
                     margin_y=4,
                     margin_x=5,
                     padding_y=9,
@@ -535,7 +543,6 @@ else:
                 widget.GroupBox(
                     font="space mono for powerline",
                     background="#282c3485",
-                    fontsize=16,
                     margin_y=4,
                     margin_x=5,
                     padding_y=9,
