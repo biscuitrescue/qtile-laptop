@@ -33,17 +33,12 @@ decor2 = {
     "padding": 10,
 }
 
-widget_defaults = dict(
-    font='space mono for powerline bold',
-    fontsize=17,
-    padding=4,
-)
-extension_defaults = widget_defaults.copy()
-
+xx=15
+xf="space mono for powerline bold"
 default=[
     widget.GroupBox(
         font="Space mono for powerline",
-        fontsize=14,
+        fontsize=15,
         background="#282c3485",
         foreground=colours[5],
         margin_y=4,
@@ -86,8 +81,8 @@ default=[
         background=colours[10],
         foreground=colours[1],
         format='   {load_percent}% ',
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         **decor,
         ),
     widget.Sep(
@@ -96,8 +91,8 @@ default=[
     ),
     widget.Memory(
         background=colours[7],
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         foreground=colours[1],
         measure_mem='G',
         measure_swap='G',
@@ -111,8 +106,8 @@ default=[
     widget.Memory(
         measure_mem='G',
         foreground=colours[1],
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         background=colours[3],
         measure_swap='G',
         format=' {SwapUsed: .2f} GB ',
@@ -126,8 +121,8 @@ default=[
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
         foreground=colours[1],
         update_interval=0.001,
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         background=colours[2],
         **decor2
     ),
@@ -137,8 +132,8 @@ default=[
     ),
     widget.CheckUpdates(
         colour_have_updates=colours[1],
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         colour_no_updates=colours[1],
         display_format='  {updates} ',
         distro='Arch',
@@ -155,8 +150,8 @@ default=[
         background=colours[8],
         foreground=colours[1],
         format='  %d %b, %a ',
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         **decor,
     ),
     widget.Sep(
@@ -166,8 +161,8 @@ default=[
     widget.Clock(
         background=colours[6],
         foreground=colours[1],
-        font="Space mono for powerline bold",
-        fontsize=14,
+        font=xf,
+        fontsize=xx,
         format='  %I:%M %p ',
         **decor,
     ),
@@ -189,8 +184,8 @@ default=[
 if len(os.listdir("/sys/class/power_supply"))==0:
     default.append(
         widget.CapsNumLockIndicator(
-            fontsize=14,
-            font="Space mono for powerline bold",
+            fontsize=xx,
+            font=xf,
             foreground=colours[1],
             background=colours[9],
             **decor,
@@ -199,8 +194,8 @@ if len(os.listdir("/sys/class/power_supply"))==0:
 else:
     default.append(
         widget.Battery(
-            fontsize=14,
-            font="Space mono for powerline bold",
+            fontsize=xx,
+            font=xf,
             foreground=colours[1],
             low_percentage=0.3,
             low_background=colours[4],
@@ -218,7 +213,7 @@ screens = [
     Screen(
     bottom=bar.Bar(
         default,
-        33,
+        35,
         background=colours[0],
         foreground=colours[1],
         margin=[4,6,8,6],
