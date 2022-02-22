@@ -519,93 +519,38 @@ default=[
         linewidth=0,
     ),
 ]
-
 if len(os.listdir("/sys/class/power_supply"))==0:
-    screens = [
-        Screen(
-            bottom=bar.Bar(
-            [
-                default[0],
-                default[1],
-                default[2],
-                default[3],
-                default[4],
-                default[5],
-                default[6],
-                default[7],
-                default[8],
-                default[9],
-                default[10],
-                default[11],
-                default[12],
-                default[13],
-                default[14],
-                default[15],
-                default[16],
-                default[17],
-                default[18],
-                default[19],
-                default[20],
-                default[21],
-                widget.CapsNumLockIndicator(
-                    background=colours[9],
-                    **decor
-                ),
-            ],
-                33,
-                background=colours[0],
-                margin=[4,6,10,6],
-                # margin=[10,6,4,6],
-                # opacity=0.92,
-            ),
-        ),
-    ]
+    default.append(
+        widget.CapsNumLockIndicator(
+            background=colours[9],
+            **decor,
+        )
+    )
 else:
-    screens = [
-        Screen(
-            bottom=bar.Bar(
-           [
-                default[0],
-                default[1],
-                default[2],
-                default[3],
-                default[4],
-                default[5],
-                default[6],
-                default[7],
-                default[8],
-                default[9],
-                default[10],
-                default[11],
-                default[12],
-                default[13],
-                default[14],
-                default[15],
-                default[16],
-                default[17],
-                default[18],
-                default[19],
-                default[20],
-                default[21],
-                widget.Battery(
-                    low_percentage=0.6,
-                    low_background=colours[4],
-                    background=colours[9],
-                    low_foreground=colours[5],
-                    update_interval=1,
-                    charge_char='',
-                    discharge_char='',
-                    format=' {char} {percent:2.0%} ',
-                    **decor,
-                ),
-            ],
-                33,
-                background=colours[0],
-                # margin=[4,6,6,6],
-                margin=[4,6,8,6],
-            ),
+    default.append(
+        widget.Battery(
+            low_percentage=0.3,
+            low_background=colours[4],
+            background=colours[9],
+            low_foreground=colours[5],
+            update_interval=1,
+            charge_char='',
+            discharge_char='',
+            format=' {char} {percent:2.0%} ',
+            **decor,
         ),
-    ]
+    )
+
+screens = [
+    Screen(
+    bottom=bar.Bar(
+        default,
+        33,
+        background=colours[0],
+        margin=[4,6,8,6],
+    ),
+    ),
+]
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
