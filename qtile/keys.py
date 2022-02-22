@@ -1,16 +1,7 @@
 import os
-import re
-import socket
-import subprocess
-from libqtile import qtile
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
+from libqtile.config import Click, Drag, KeyChord, Key 
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
-from qtile_extras import widget
 from libqtile.lazy import lazy
-from qtile_extras.widget.decorations import RectDecoration
-from typing import List  # noqa: F401
-from qtile_extras.bar import Bar
 
 mod = "mod4"
 mod1 = "mod1"
