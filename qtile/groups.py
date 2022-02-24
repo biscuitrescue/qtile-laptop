@@ -17,7 +17,8 @@ groups= [
 
     Group("2",
           label="",
-          # spawn='vivaldi',
+          spawn="brave-bin",
+          layout="tile",
           matches=[Match(wm_class=["Vivaldi-stable"]),
                    Match(wm_class=["Icecat"]),
                    Match(wm_class=["Brave-browser"]),
@@ -26,6 +27,7 @@ groups= [
 
     Group("3",
           label="",
+          layout="zoomy",
           matches=[Match(wm_class=["Zathura"]),
                    Match(wm_class=["Evince"]),
                    ],
@@ -39,9 +41,8 @@ groups= [
 
     Group("5",
           label="",
-          layout="max",
+          layout="tile",
           matches=[Match(wm_class=["firefox"]),
-                   # Match(wm_class=["firefox"]),
                    Match(wm_class=["Mplayer"]),
                    ],
           ),
@@ -49,20 +50,21 @@ groups= [
     Group("6",
           label="",
           matches=[Match(wm_class=["pcmanfm"]),
-                   # Match(wm_class=["Org.gnome.Nautilus"]),
                    Match(wm_class=["qBittorrent"]),
                    ],
           ),
 
     Group("7",
           label="",
-          layout="bsp",
+          layout="tile",
           matches=[Match(wm_class=["pavucontrol"]),
                    ],
           ),
 
     Group("8",
           label="",
+          spawn="emacs",
+          layout="tile",
           matches=[Match(wm_class=["VSCodium"]),
                    ],
           ),
@@ -102,25 +104,28 @@ for i in groups:
 ### ScratchPad
 
 groups.append(ScratchPad('Scratchpad',[
+    DropDown("sig", "signal-desktop", height=0.6, width=0.5, x=0.25, y=0.225,
+             opacity=1),
     DropDown("term", "kitty", height=0.6, opacity=1),
     DropDown("editor", "emacs",
-             x=0.05, y=0.345, width=0.9, height=0.65, opacity=0.9,
+             x=0.05, y=0.35, width=0.9, height=0.65, opacity=1,
              on_focus_lost_hide=True),
-    DropDown("fmger", "thunar", height=0.7, opacity=0.85,
+    DropDown("fmger", "thunar", height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.10 ),
-    DropDown("spotify", "spotify", height=0.7, opacity=0.85,
+    DropDown("spotify", "spotify", height=0.7, opacity=0.9,
              width=0.7, x=0.15, y=0.15 ),
+    DropDown("fm", 'kitty -e ranger', height=0.7, opacity=1,
+             width=0.7, x=0.15, y=0.125),
     DropDown("hitop", 'kitty -e htop', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
     DropDown("dc", 'kitty -e gord', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
     DropDown("top", 'kitty -e btop', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
-    DropDown("fm", 'kitty -e ranger', height=0.6, opacity=1,
-             width=0.7, x=0.15, y=0.15),
 ]))
 
 keys.extend([
+    Key([mod, 'shift'], "v", lazy.group['Scratchpad'].dropdown_toggle('sig')),
     Key([mod], "p", lazy.group['Scratchpad'].dropdown_toggle('term')),
     Key([mod], "o", lazy.group['Scratchpad'].dropdown_toggle('editor')),
     Key([mod, "shift"], "s", lazy.group['Scratchpad'].dropdown_toggle("spotify")),
@@ -136,6 +141,13 @@ border=dict(
 )
 
 layouts = [
+    layout.MonadTall(
+        margin=12,
+        border_width=2,
+        ratio=0.55,
+        shift_windows=True,
+        **border
+    ),
     layout.Tile(
         margin=8,
         margin_on_single=False,
