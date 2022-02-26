@@ -198,7 +198,7 @@ else:
             fontsize=xx,
             font=xf,
             foreground=colours[1],
-            low_percentage=0.99,
+            low_percentage=0.3,
             low_background=colours[11],
             background=colours[9],
             low_foreground=colours[1],
