@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-colors =  [
+colours =  [
         ["#00000000"],     # color 0
         ["#2e3440"], # color 1
         ["#adefd1"], # color 2
@@ -15,160 +15,180 @@ colors =  [
         ["#ffb18f"], # color 6
         ["#aec597"], # color 7
         ["#B591B0"], # color 8
-        ["#0ee9af"], # color 9
-        ["#5aec97"], # color 8
-        ["#ff6e6e"]] # color 9
+        ["#5aec97"], # color 9
+        ["#0ee9af"], # color 10
+        ["#ff6e6e"]] # color 10
 
+
+# extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=12, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0,)
     ],
-    "padding": 15,
+    "padding": 5,
+}
+decor2 = {
+    "decorations": [
+        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0)
+    ],
+    "padding": 10,
 }
 
-xx=14
-xf="novamono for powerline bold"
+xx=15
+xf="space mono for powerline bold"
 default=[
-    widget.Clock(
-        font=xf,
-        fontsize=xx,
-        foreground=colors[1],
-        background=colors[4],
-        format='  %d %b, %A ',
+    widget.GroupBox(
+        font="Space mono for powerline",
+        fontsize=15,
+        background="#282c3485",
+        foreground=colours[5],
+        margin_y=4,
+        margin_x=5,
+        padding_y=9,
+        padding_x=4,
+        borderwidth=7,
+        inactive=colours[11],
+        active=colours[6],
+        rounded=True,
+        highlight_color=colours[4],
+        highlight_method="text",
+        this_current_screen_border=colours[9],
+        block_highlight_text_color=colours[1],
         **decor,
     ),
     widget.Sep(
-        background=colors[0],
-        padding=10,
+        padding=8,
         linewidth=0,
-    ),
-    widget.Memory(
-        background=colors[10],
-        foreground=colors[1],
-        font=xf,
-        fontsize=xx,
-        measure_mem='G',
-        measure_swap='G',
-        format='{MemUsed: .2f} GB',
-        **decor,
-    ),
-    widget.Sep(
-        background=colors[0],
-        padding=10,
-        linewidth=0,
-    ),
-    widget.CurrentLayout(
-        background=colors[3],
-        foreground=colors[1],
-        font=xf,
-        fontsize=xx,
-        **decor,
     ),
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-        scale=0.45,
-        padding=0,
-        background=colors[0],
-    ),
-
-    widget.Spacer(),
-
-    widget.GroupBox(
-        font="space mono for powerline",
-        fontsize=15,
-        margin_y=4,
-        margin_x=4,
-        padding_y=5,
-        padding_x=4,
-        borderwidth=7,
-        inactive=colors[11],
-        active=colors[6],
-        rounded=True,
-        highlight_color=colors[0],
-        highlight_method="text",
-        this_current_screen_border=colors[10],
-        block_highlight_text_color=colors[1],
-        background="#282a3690",
+        scale=0.4,
+        background="#282c3485",
         **decor,
     ),
 
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+
     widget.Spacer(),
 
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.CPU(
+        background=colours[10],
+        foreground=colours[1],
+        format='   {load_percent}% ',
+        font=xf,
+        fontsize=xx,
+        **decor,
+        ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.Memory(
+        background=colours[7],
+        font=xf,
+        fontsize=xx,
+        foreground=colours[1],
+        measure_mem='G',
+        measure_swap='G',
+        format='  {MemUsed: .2f} GB ',
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.Memory(
+        measure_mem='G',
+        foreground=colours[1],
+        font=xf,
+        fontsize=xx,
+        background=colours[3],
+        measure_swap='G',
+        format=' {SwapUsed: .2f} GB ',
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.PulseVolume(
+        mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
+        foreground=colours[1],
+        update_interval=0.001,
+        font=xf,
+        fontsize=xx,
+        background=colours[2],
+        **decor2
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.CheckUpdates(
+        colour_have_updates=colours[1],
+        font=xf,
+        fontsize=xx,
+        colour_no_updates=colours[1],
+        display_format='  {updates} ',
+        distro='Arch',
+        no_update_string='  N/A ',
+        update_interval=1,
+        background=colours[4],
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.Clock(
+        background=colours[8],
+        foreground=colours[1],
+        format='  %d %b, %a ',
+        font=xf,
+        fontsize=xx,
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.Clock(
+        background=colours[6],
+        foreground=colours[1],
+        font=xf,
+        fontsize=xx,
+        format='  %I:%M %p ',
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
     widget.Systray(
-        background=colors[0],
-        foreground=colors[8],
+        background=colours[0],
+        foreground=colours[8],
         icon_size=20,
         padding=4,
     ),
     widget.Sep(
-        background=colors[0],
-        padding=10,
-        linewidth=0,
-    ),
-    widget.PulseVolume(
-        background=colors[2],
-        foreground=colors[1],
-        font=xf,
-        fontsize=xx,
-        mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
-        update_interval=0.001,
-        **decor
-    ),
-    widget.Sep(
-        background=colors[0],
-        padding=10,
-        linewidth=0,
-    ),
-    widget.CPU(
-        background=colors[9],
-        foreground=colors[1],
-        format=' {load_percent}%',
-        font=xf,
-        fontsize=xx,
-        **decor
-    ),
-    widget.Sep(
-        background=colors[0],
-        padding=10,
-        linewidth=0,
-    ),
-    widget.Memory(
-        background=colors[6],
-        foreground=colors[1],
-        font=xf,
-        fontsize=xx,
-        measure_mem='G',
-        measure_swap='G',
-        format='{SwapUsed: .2f} GB',
-        **decor,
-    ),
-    widget.Sep(
-        background=colors[0],
-        padding=10,
-        linewidth=0,
-    ),
-    widget.Clock(
-        background=colors[4],
-        foreground=colors[1],
-        font=xf,
-        fontsize=xx,
-        format='%I:%M %p',
-        **decor
-    ),
-    widget.Sep(
-        background=colors[0],
-        padding=10,
+        padding=8,
         linewidth=0,
     ),
 ]
-
 if len(os.listdir("/sys/class/power_supply"))==0:
     default.append(
         widget.CapsNumLockIndicator(
             fontsize=xx,
             font=xf,
-            foreground=colors[1],
-            background=colors[9],
+            foreground=colours[1],
+            background=colours[9],
             **decor,
         )
     )
@@ -177,27 +197,27 @@ else:
         widget.Battery(
             fontsize=xx,
             font=xf,
-            foreground=colors[1],
-            low_percentage=0.3,
-            low_background=colors[11],
-            background=colors[10],
-            low_foreground=colors[1],
+            foreground=colours[1],
+            low_percentage=0.99,
+            low_background=colours[11],
+            background=colours[9],
+            low_foreground=colours[1],
             update_interval=1,
             charge_char='',
             discharge_char='',
-            format='{char} {percent:2.0%}',
+            format=' {char} {percent:2.0%} ',
             **decor,
         ),
     )
 
 screens = [
     Screen(
-    top=bar.Bar(
+    bottom=bar.Bar(
         default,
-        36,
-        background=colors[0],
-        foreground=colors[1],
-        margin=[8,6,4,6],
+        35,
+        background=colours[0],
+        foreground=colours[1],
+        margin=[4,6,8,6],
     ),
     ),
 ]
