@@ -88,7 +88,7 @@ default=[
         highlight_method="text",
         this_current_screen_border=colors[10],
         block_highlight_text_color=colors[1],
-        background="#282a3690",
+        background=colors[1],
         **decor,
     ),
 

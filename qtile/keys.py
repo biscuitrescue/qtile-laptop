@@ -59,10 +59,10 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5")),
-    # Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
-    # Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    # Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5")),
+    # Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
 
 
 
@@ -156,9 +156,9 @@ keys = [
     Key([mod, "shift"], 'd', lazy.spawn('dunstop')),
 
     KeyChord([mod], "i",[
-        Key([], "f", lazy.spawn("firefox")),
+        Key([], "f", lazy.spawn("firefox-bin")),
         Key([], "v", lazy.spawn("vivaldi-stable")),
-        Key([], "b", lazy.spawn("brave")),
+        Key([], "b", lazy.spawn("brave-bin")),
         Key([], "l", lazy.spawn("librewolf")),
     ]),
 ### EDITORS
@@ -174,10 +174,9 @@ keys = [
             ]),
 ### DMSCRIPTS
     KeyChord([mod], "x",[
-        Key([], "c", lazy.spawn("bash /home/karttikeya/dmscripts/dmconf")),
-        Key([], "x", lazy.spawn("powermenu")),
-        Key([], "p", lazy.spawn("bash /home/karttikeya/dmscripts/dmpy")),
-        Key([], "f", lazy.spawn("bash /home/karttikeya/dmscripts/dmfeh")),
+        Key([], "c", lazy.spawn("bash /home/trogdor/dmscripts/dmconf")),
+        Key([], "p", lazy.spawn("bash /home/trogdor/dmscripts/dmpy")),
+        Key([], "f", lazy.spawn("bash /home/trogdor/dmscripts/dmfeh")),
             ]),
 
 ### REDSHIFT
