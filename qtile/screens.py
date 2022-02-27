@@ -7,16 +7,16 @@ from qtile_extras.bar import Bar
 
 colours =  [
         ["#00000000"],     # color 0
-        ["#2e3440"], # color 1
+        ["#282a36"], # color 1
         ["#adefd1"], # color 2
         ["#f8baaf"], # color 3
         ["#FF7696"], # color 4
         ["#f3f4f5"], # color 5
         ["#ffb18f"], # color 6
-        ["#aec597"], # color 7
+        ["#7AEEAA"], # color 7
         ["#B591B0"], # color 8
-        ["#5aec97"], # color 9
-        ["#0ee9af"], # color 10
+        ["#50fa7b"], # color 9
+        ["#8be9fd"], # color 10
         ["#ff6e6e"]] # color 10
 
 
@@ -137,7 +137,6 @@ default=[
         fontsize=xx,
         colour_no_updates=colours[1],
         display_format='  {updates} ',
-        distro='Arch',
         no_update_string='  N/A ',
         update_interval=1,
         background=colours[4],
