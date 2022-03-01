@@ -139,8 +139,6 @@ border=dict(
 layouts = [
     layout.Tile(
         margin=8,
-        margin_on_single=False,
-        border_on_single=False,
         border_width=2,
         ratio=0.55,
         shift_windows=True,
