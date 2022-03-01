@@ -6,18 +6,21 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
 colours =  [
-    ["#00000000"],      # Colour 0
-    ["#1e1e2e"],        # Colour 1
-    ["#f28fad"],        # Colour 2
-    ["#abe9b3"],        # Colour 3
-    ["#fae3b0"],        # Colour 4
-    ["#d6acff"],        # Colour 5
-    ["#f5c2e7"],        # Colour 6
-    ["#89DCEB"],        # Colour 7
-    ["#F2779C"],        # Colour 8
-    ["#b5e8e0"],        # Colour 9
-    ["#ff6e6e"]]        # Colour 10
+        ["#00000000"],     # color 0
+        ["#282a36"], # color 1
+        ["#adefd1"], # color 2
+        ["#f8baaf"], # color 3
+        ["#FF7696"], # color 4
+        ["#f3f4f5"], # color 5
+        ["#ffb18f"], # color 6
+        ["#7AEEAA"], # color 7
+        ["#B591B0"], # color 8
+        ["#50fa7b"], # color 9
+        ["#8be9fd"], # color 10
+        ["#ff6e6e"]] # color 10
 
+
+# extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
         RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0,)
@@ -37,18 +40,19 @@ default=[
     widget.GroupBox(
         font="Space mono for powerline",
         fontsize=15,
-        background="#1e1e2e99",
+        background="#282c3485",
+        foreground=colours[5],
         margin_y=4,
         margin_x=5,
         padding_y=9,
         padding_x=4,
         borderwidth=7,
-        inactive=colours[6],
-        active=colours[3],
+        inactive=colours[11],
+        active=colours[6],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="text",
-        this_current_screen_border=colours[10],
+        this_current_screen_border=colours[9],
         block_highlight_text_color=colours[1],
         **decor,
     ),
@@ -75,7 +79,7 @@ default=[
         linewidth=0,
     ),
     widget.CPU(
-        background=colours[9],
+        background=colours[10],
         foreground=colours[1],
         format='   {load_percent}% ',
         font=xf,
@@ -87,7 +91,7 @@ default=[
         linewidth=0,
     ),
     widget.Memory(
-        background=colours[2],
+        background=colours[7],
         font=xf,
         fontsize=xx,
         foreground=colours[1],
@@ -105,7 +109,7 @@ default=[
         foreground=colours[1],
         font=xf,
         fontsize=xx,
-        background=colours[5],
+        background=colours[3],
         measure_swap='G',
         format=' {SwapUsed: .2f} GB ',
         **decor,
@@ -120,15 +124,30 @@ default=[
         update_interval=0.001,
         font=xf,
         fontsize=xx,
-        background=colours[7],
+        background=colours[2],
         **decor2
     ),
     widget.Sep(
         padding=8,
         linewidth=0,
     ),
-    widget.Clock(
+    widget.CheckUpdates(
+        colour_have_updates=colours[1],
+        font=xf,
+        fontsize=xx,
+        colour_no_updates=colours[1],
+        display_format='  {updates} ',
+        no_update_string='  N/A ',
+        update_interval=1,
         background=colours[4],
+        **decor,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
+    widget.Clock(
+        background=colours[8],
         foreground=colours[1],
         format='  %d %b, %a ',
         font=xf,
@@ -153,7 +172,7 @@ default=[
     ),
     widget.Systray(
         background=colours[0],
-        foreground=colours[4],
+        foreground=colours[8],
         icon_size=20,
         padding=4,
     ),
@@ -168,7 +187,7 @@ if len(os.listdir("/sys/class/power_supply"))==0:
             fontsize=xx,
             font=xf,
             foreground=colours[1],
-            background=colours[3],
+            background=colours[9],
             **decor,
         )
     )
@@ -179,8 +198,8 @@ else:
             font=xf,
             foreground=colours[1],
             low_percentage=0.3,
-            low_background=colours[10],
-            background=colours[3],
+            low_background=colours[11],
+            background=colours[9],
             low_foreground=colours[1],
             update_interval=1,
             charge_char='',
@@ -194,7 +213,7 @@ screens = [
     Screen(
     bottom=bar.Bar(
         default,
-        34,
+        35,
         background=colours[0],
         foreground=colours[1],
         margin=[4,6,8,6],
