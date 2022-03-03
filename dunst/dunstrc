@@ -275,7 +275,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    foreground = "#f5c2e7"
+    foreground = "#F8BD96"
     background = "#1e1e2e"
     frame_color = "#1e1e2e"
     timeout = 10
@@ -283,7 +283,7 @@
     icon = ~/.config/dunst/images/notification.png
 
 [urgency_normal]
-    foreground = "#f5c2e7"
+    foreground = "#F8BD96"
     background = "#1e1e2e"
     frame_color = "#1e1e2e"
     timeout = 10
@@ -291,7 +291,7 @@
     icon = ~/.config/dunst/images/notification.png
 
 [urgency_critical]
-    foreground = "#f5c2e7"
+    foreground = "#F8BD96"
     background = "#1e1e2e"
     frame_color = "#1e1e2e"
     timeout = 0
