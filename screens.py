@@ -31,12 +31,12 @@ decor2 = {
     "padding": 10,
 }
 
-xx=15
-xf="space mono for powerline bold"
+xx=16
+xf="operator mono book"
 default=[
     widget.GroupBox(
-        font="Space mono for powerline",
-        fontsize=15,
+        font="jetbrainsmono nerd font",
+        fontsize=16,
         background="#1e1e2e99",
         margin_y=4,
         margin_x=5,

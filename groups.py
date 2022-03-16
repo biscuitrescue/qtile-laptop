@@ -5,6 +5,7 @@ from libqtile.command import lazy
 from libqtile.lazy import lazy
 from keys import keys
 
+myTerm="alacritty"
 mod = "mod4"
 mod1 = "mod1"
 mod2 = "control"
@@ -12,11 +13,11 @@ mod3  = "shift"
 home = os.path.expanduser('~')
 groups= [
     Group("1",
-          label="",
+          label="",
           ),
 
     Group("2",
-          label="",
+          label="",
           spawn="brave-bin",
           matches=[Match(wm_class=["Vivaldi-stable"]),
                    Match(wm_class=["Icecat"]),
@@ -25,7 +26,7 @@ groups= [
           ),
 
     Group("3",
-          label="",
+          label="",
           layout="zoomy",
           matches=[Match(wm_class=["Zathura"]),
                    Match(wm_class=["Evince"]),
@@ -39,7 +40,7 @@ groups= [
           ),
 
     Group("5",
-          label="",
+          label="磊",
           matches=[Match(wm_class=["Firefox"]),
                    Match(wm_class=["firefox"]),
                    Match(wm_class=["Mplayer"]),
@@ -47,26 +48,26 @@ groups= [
           ),
 
     Group("6",
-          label="",
+          label="ﱮ",
           matches=[Match(wm_class=["pcmanfm"]),
                    Match(wm_class=["qBittorrent"]),
                    ],
           ),
 
     Group("7",
-          label="",
+          label="阮",
           matches=[Match(wm_class=["pavucontrol"]),
                    ],
           ),
 
     Group("8",
-          label="",
+          label="",
           matches=[Match(wm_class=["VSCodium"]),
                    ],
           ),
 
     Group("9",
-          label="",
+          label="辶",
           layout="max",
           matches=[Match(wm_class=["zoom"]),
                    Match(wm_class=["Microsoft Teams - Preview"]),
@@ -102,21 +103,21 @@ for i in groups:
 groups.append(ScratchPad('Scratchpad',[
     DropDown("sig", "signal-desktop", height=0.6, width=0.5, x=0.25, y=0.225,
              opacity=1),
-    DropDown("term", "kitty", height=0.6, opacity=1),
-    DropDown("editor", "kitty -e nvim",
+  DropDown("term", myTerm, height=0.6, opacity=1),
+    DropDown("editor", "alacritty -e nvim",
              x=0.05, y=0.35, width=0.9, height=0.65, opacity=1,
              on_focus_lost_hide=True),
     DropDown("fmger", "nautilus", height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.10 ),
     DropDown("spotify", "spotify", height=0.7, opacity=0.9,
              width=0.7, x=0.15, y=0.15 ),
-    DropDown("fm", 'kitty -e ranger', height=0.7, opacity=1,
+    DropDown("fm", 'alacritty -e ranger', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
-    DropDown("hitop", 'kitty -e htop', height=0.7, opacity=1,
+    DropDown("hitop", 'alacritty -e htop', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
     DropDown("dc", 'kitty -e gord', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
-    DropDown("top", 'kitty -e btop', height=0.7, opacity=1,
+    DropDown("top", 'alacritty -e btop', height=0.7, opacity=1,
              width=0.7, x=0.15, y=0.125),
 ]))
 
