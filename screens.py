@@ -31,17 +31,17 @@ decor2 = {
     "padding": 10,
 }
 
-xx=16
+xx=17
 xf="operator mono book"
 default=[
     widget.GroupBox(
         font="jetbrainsmono nerd font",
-        fontsize=16,
+        fontsize=25,
         background="#1e1e2e99",
         margin_y=4,
         margin_x=5,
         padding_y=9,
-        padding_x=4,
+        padding_x=2,
         borderwidth=7,
         inactive=colours[6],
         active=colours[3],
