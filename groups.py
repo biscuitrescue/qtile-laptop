@@ -41,10 +41,9 @@ groups=[
     Group("7", label="",
           matches=[Match(wm_class=["pavucontrol"]),
                    ]),
-
+    
     Group("8", label="",
-          matches=[Match(wm_class=["VSCodium"]),
-                   ]),
+                   ),
 
     Group("9", label="", layout="max",
           matches=[Match(wm_class=["zoom"]),
@@ -75,7 +74,7 @@ for i in groups:
 
 groups.append(ScratchPad('Scratchpad',[
     DropDown("sig", "signal-desktop", height=0.6, width=0.5, x=0.25, y=0.225,
-             opacity=1),
+                 opacity=1),
     DropDown("term", myTerm, height=0.6, opacity=1),
     DropDown("editor", "alacritty -e nvim",
              x=0.05, y=0.35, width=0.9, height=0.65, opacity=1,

@@ -96,7 +96,7 @@ keys = [
 ###############################################
 
     Key([mod], "space", lazy.spawn(Term2)),
-    Key([mod, "shift"], "a", lazy.spawn("betterlockscreen -l pixel")),
+    Key([mod, "shift"], "a", lazy.spawn("./.lock.sh")),
     Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
     Key([mod], "KP_Add", lazy.spawn("lock")),
     Key([mod], "Return", lazy.spawn(myTerm)),

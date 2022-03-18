@@ -22,7 +22,7 @@ decor = {
     "decorations": [
         RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0,)
     ],
-    "padding": 5,
+    "padding": 10,
 }
 decor2 = {
     "decorations": [
@@ -31,7 +31,7 @@ decor2 = {
     "padding": 10,
 }
 
-xx=17
+xx=16
 xf="operator mono book"
 default=[
     widget.GroupBox(
@@ -77,7 +77,7 @@ default=[
     widget.CPU(
         background=colours[9],
         foreground=colours[1],
-        format='   {load_percent}% ',
+        format=' {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
@@ -93,7 +93,7 @@ default=[
         foreground=colours[1],
         measure_mem='G',
         measure_swap='G',
-        format='  {MemUsed: .2f} GB ',
+        format='{MemUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -107,7 +107,7 @@ default=[
         fontsize=xx,
         foreground=colours[1],
         measure_swap='G',
-        format=' {SwapUsed: .2f} GB ',
+        format='{SwapUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -127,10 +127,26 @@ default=[
         padding=8,
         linewidth=0,
     ),
+    widget.CheckUpdates(
+        font=xf,
+        fontsize=xx,
+        background=colours[2],
+        foreground=colours[1],
+        distro='Gentoo_eix',
+        display_format=" {updates}",
+        colour_have_updates=colours[1],
+        no_update_string='N/A',
+        update_interval=60,
+        **decor2,
+    ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
+    ),
     widget.Clock(
         background=colours[5],
         foreground=colours[1],
-        format='  %d %b, %a ',
+        format=' %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
@@ -144,7 +160,7 @@ default=[
         foreground=colours[1],
         font=xf,
         fontsize=xx,
-        format='  %I:%M %p ',
+        format=' %I:%M %p',
         **decor,
     ),
     widget.Sep(
@@ -184,8 +200,8 @@ else:
             low_foreground=colours[1],
             update_interval=1,
             charge_char='',
-            discharge_char='',
-            format=' {char} {percent:2.0%} ',
+            discharge_char='',
+            format='{char} {percent:2.0%}',
             **decor,
         ),
     )
