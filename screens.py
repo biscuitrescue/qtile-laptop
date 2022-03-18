@@ -123,22 +123,22 @@ default=[
         background=colours[3],
         **decor2
     ),
-    widget.Sep(
-        padding=8,
-        linewidth=0,
-    ),
-    widget.CheckUpdates(
-        font=xf,
-        fontsize=xx,
-        background=colours[2],
-        foreground=colours[1],
-        distro='Gentoo_eix',
-        display_format=" {updates}",
-        colour_have_updates=colours[1],
-        no_update_string='N/A',
-        update_interval=60,
-        **decor2,
-    ),
+    # widget.Sep(
+    #     padding=8,
+    #     linewidth=0,
+    # ),
+    # widget.CheckUpdates(
+    #     font=xf,
+    #     fontsize=xx,
+    #     background=colours[2],
+    #     foreground=colours[1],
+    #     distro='Gentoo_eix',
+    #     display_format=" {updates}",
+    #     colour_have_updates=colours[1],
+    #     no_update_string='N/A',
+    #     update_interval=60,
+    #     **decor2,
+    # ),
     widget.Sep(
         padding=8,
         linewidth=0,
