@@ -32,6 +32,7 @@ keys = [
     Key([mod], "z", lazy.spawn("rofi -show window")),
     Key([mod], "d", lazy.spawn("rofi -show drun")),
     Key([mod], "r", lazy.spawn("rofi -show run")),
+    Key([mod, "shift"], "Return", lazy.spawn("dmenu_run -i -h 28 -p 'RUN:'")),
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
     Key([], "XF86AudioMicMute", lazy.spawn("mictoggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5")),
@@ -41,8 +42,6 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-    # Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5")),
-    # Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5")),
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
     Key([mod, "control"], "a", lazy.window.toggle_floating()),
@@ -79,8 +78,8 @@ keys = [
     Key([mod], "Tab", lazy.layout.next()),
 
     Key([mod], "b", lazy.hide_show_bar()),
-    Key([mod], "a", lazy.next_layout()),
-    Key([mod], "s", lazy.prev_layout()),
+    Key([mod], "s", lazy.next_layout()),
+    Key([mod], "a", lazy.prev_layout()),
     Key([mod], "q", lazy.window.kill()),
     Key([mod, "shift"], "q", lazy.shutdown()),
     Key([mod], "c", lazy.restart()),
@@ -106,7 +105,7 @@ keys = [
     Key([mod, "shift"], 'd', lazy.spawn('dunstop')),
 
     KeyChord([mod], "i",[
-        Key([], "f", lazy.spawn("firefox-bin")),
+        Key([], "f", lazy.spawn("firefox")),
         Key([], "v", lazy.spawn("vivaldi-stable")),
         Key([], "b", lazy.spawn("brave-bin")),
         Key([], "l", lazy.spawn("librewolf")),
