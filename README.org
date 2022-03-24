@@ -1,28 +1,28 @@
 #+TITLE: My config for Qtile
 
-** Requirements
-***** Nerd fonts
-***** Qtile 21+
-***** Qtile-extras
-***** Picom ( I use jonaburg )
-***** Xbacklight ( This is default but you can change in keys.py )
-***** Playerctl
-***** i3lock-color
-***** Betterlockscreen
-***** Maim + Xclip
+** Requirements:
+***** * Nerd fonts
+***** * Qtile 21+
+***** * Qtile-extras
+***** * Picom ( I use jonaburg )
+***** * Xbacklight ( This is default but you can change in keys.py )
+***** * Playerctl
+***** * i3lock-color
+***** * Betterlockscreen
+***** * Maim + Xclip
 
-** Defaults
+** Defaults:
 
 *** Reload Config ( More like restart qtile )
-***** Mod + C
+***** * Mod + C
 
-*** Launchers
-***** Rofi
-****** Mod + D -> drun
-****** Mod + R -> run
-****** Mod + Z -> window
-****** Mod + g -> filebrowser
-*** Dmenu
+*** Launchers:
+***** * Rofi
+****** * Mod + D -> drun
+****** * Mod + R -> run
+****** * Mod + Z -> window
+****** * Mod + g -> filebrowser
+*** Dmenu:
 ****** Mod + Shift + Return -> dmenu_run -i -h 28 -p 'RUN:'
 
 *** Terminal Emulators
