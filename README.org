@@ -31,13 +31,13 @@
 ***** Mod + Space
 ****** Urxvt
 
-**** Editors
+**** Editors:
 ****** Mod + E
-******* e -> emacs
-******* v -> vscodium
-******* n -> neovide
+*******      e -> emacs
+*******      v -> vscodium
+*******      n -> neovide
 
-**** Scratchpads
+**** Scratchpads:
 ***** Terminal ( Alacritty )
 ****** Mod + P
 ***** Editor ( Emacs )
@@ -52,7 +52,7 @@
 ****** Mod + Shift + V ( Signal )
 ****** Mod + Shift + D ( Gord -> Alacritty )
 
-**** Other Apps
+**** Other Apps:
 ***** Pavucontrol
 ****** Mod + V
 ***** Browsers
