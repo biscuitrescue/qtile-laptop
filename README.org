@@ -1,15 +1,15 @@
 #+TITLE: My config for Qtile
 
 ** Requirements
-**** Nerd fonts
-**** Qtile 21+
-**** Qtile-extras
-**** Picom ( I use jonaburg )
-**** Xbacklight ( This is default but you can change in keys.py )
-**** Playerctl
-**** i3lock-color
-**** Betterlockscreen
-**** Maim + Xclip
+*** * Nerd fonts
+*** * Qtile 21+
+*** * Qtile-extras
+*** * Picom ( I use jonaburg )
+*** * Xbacklight ( This is default but you can change in keys.py )
+*** * Playerctl
+*** * i3lock-color
+*** * Betterlockscreen
+*** * Maim + Xclip
 
 ** Defaults
 
