@@ -17,7 +17,7 @@
 ***** * Mod + C
 
 *** Launchers:
-***** * Rofi
+**** Rofi
 ******      Mod + D -> drun
 ******      Mod + R -> run
 ******      Mod + Z -> window
