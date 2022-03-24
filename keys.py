@@ -30,9 +30,11 @@ def window_to_next_group(qtile):
 
 keys = [
     Key([mod], "z", lazy.spawn("rofi -show window")),
+    Key([mod], "g", lazy.spawn("rofi -show filebrowser")),
     Key([mod], "d", lazy.spawn("rofi -show drun")),
     Key([mod], "r", lazy.spawn("rofi -show run")),
     Key([mod, "shift"], "Return", lazy.spawn("dmenu_run -i -h 28 -p 'RUN:'")),
+
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
     Key([], "XF86AudioMicMute", lazy.spawn("mictoggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5")),
@@ -95,9 +97,9 @@ keys = [
 ###############################################
 
     Key([mod], "space", lazy.spawn(Term2)),
-    Key([mod, "shift"], "a", lazy.spawn("./.lock.sh")),
+    Key([mod, "shift"], "a", lazy.spawn("betterlockscreen -l")),
     Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
-    Key([mod], "KP_Add", lazy.spawn("lock")),
+    Key([mod], "KP_Add", lazy.spawn("i3lock -c 000000")),
     Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod], "KP_Enter", lazy.spawn(myTerm)),
     Key([mod], "v", lazy.spawn("pavucontrol")),

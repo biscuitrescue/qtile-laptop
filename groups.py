@@ -16,6 +16,7 @@ groups=[
     Group("2", label="", spawn="brave-bin",
         matches=[Match(wm_class=["Vivaldi-stable"]),
                  Match(wm_class=["Icecat"]),
+                 Match(wm_class=["LibreWolf"]),
                  Match(wm_class=["Brave-browser"]),
                  ]),
 
@@ -75,7 +76,7 @@ for i in groups:
 groups.append(ScratchPad('Scratchpad',[
     DropDown("sig", "signal-desktop", height=0.6, width=0.5, x=0.25, y=0.225,
                  opacity=1),
-    DropDown("term", "alacritty -o window.opacity=0.5",
+    DropDown("term", "alacritty -o window.opacity=0.6",
              width=0.6, height=0.8,
              x=0.2, y=0.1, opacity=1),
     DropDown("editor", "emacs",
@@ -86,22 +87,18 @@ groups.append(ScratchPad('Scratchpad',[
              x=0.2, y=0.075, opacity=1),
     DropDown("spotify", "spotify", height=0.75, opacity=0.9,
              width=0.7, x=0.15, y=0.15 ),
-    DropDown("fm", 'alacritty -o window.opacity=0.5 -e ranger',
+    DropDown("fm", 'alacritty -o window.opacity=0.6 -e ranger',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("hitop", 'alacritty -o window.opacity=0.5 -e htop',
+    DropDown("hitop", 'alacritty -o window.opacity=0.6 -e htop',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("dc", 'alacritty -o window.opacity=0.5 -e gord',
+    DropDown("dc", 'alacritty -o window.opacity=0.6 -e gord',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("top", 'alacritty -o window.opacity=0.5 -e btop',
+    DropDown("top", 'alacritty -o window.opacity=0.6 -e btop',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    # DropDown("term", myTerm, height=0.6, opacity=1),
-    # DropDown("editor", "emacs",
-    #          x=0.05, y=0.35, width=0.9, height=0.65, opacity=1,
-    #          on_focus_lost_hide=True),
 ]))
 
 keys.extend([
@@ -116,7 +113,7 @@ keys.extend([
     Key([mod, 'shift'], 'space', lazy.group['Scratchpad'].dropdown_toggle('fmger')),
 ])
 border=dict(
-    border_focus="#F28FAD",
+    border_focus="#FE6973",
     border_normal="#4c566a"
 )
 
@@ -132,7 +129,6 @@ layouts = [
         fair=False,
         margin=8,
         border_width=2,
-        # ratio=1,
         shift_windows=True,
         **border
     ),

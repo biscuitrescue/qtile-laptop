@@ -20,15 +20,15 @@ colours =  [
 
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=7, filled=True, padding_y=0,)
     ],
     "padding": 10,
 }
 decor2 = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0)
+        RectDecoration(use_widget_background=True, radius=7, filled=True, padding_y=0,)
     ],
-    "padding": 10,
+    "padding": 3,
 }
 
 xx=16
@@ -60,12 +60,7 @@ default=[
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.4,
         background="#1e1e2e99",
-        **decor,
-    ),
-
-    widget.Sep(
-        padding=8,
-        linewidth=0,
+        **decor2,
     ),
 
     widget.Spacer(),
@@ -121,24 +116,8 @@ default=[
         font=xf,
         fontsize=xx,
         background=colours[3],
-        **decor2
+        **decor
     ),
-    # widget.Sep(
-    #     padding=8,
-    #     linewidth=0,
-    # ),
-    # widget.CheckUpdates(
-    #     font=xf,
-    #     fontsize=xx,
-    #     background=colours[2],
-    #     foreground=colours[1],
-    #     distro='Gentoo_eix',
-    #     display_format=" {updates}",
-    #     colour_have_updates=colours[1],
-    #     no_update_string='N/A',
-    #     update_interval=60,
-    #     **decor2,
-    # ),
     widget.Sep(
         padding=8,
         linewidth=0,
