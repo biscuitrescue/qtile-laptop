@@ -17,27 +17,27 @@
 ***** * Mod + C
 
 *** Launchers:
-**** Rofi
+**** Rofi:
 ******      Mod + D -> drun
 ******      Mod + R -> run
 ******      Mod + Z -> window
 ******      Mod + g -> filebrowser
-*** Dmenu:
+**** Dmenu:
 ****** Mod + Shift + Return -> dmenu_run -i -h 28 -p 'RUN:'
 
-*** Terminal Emulators
+**** Terminal Emulators:
 ***** Mod + Return
 ****** Alacritty
 ***** Mod + Space
 ****** Urxvt
 
-*** Editors
+**** Editors
 ****** Mod + E
 ******* e -> emacs
 ******* v -> vscodium
 ******* n -> neovide
 
-*** Scratchpads
+**** Scratchpads
 ***** Terminal ( Alacritty )
 ****** Mod + P
 ***** Editor ( Emacs )
@@ -52,7 +52,7 @@
 ****** Mod + Shift + V ( Signal )
 ****** Mod + Shift + D ( Gord -> Alacritty )
 
-*** Other Apps
+**** Other Apps
 ***** Pavucontrol
 ****** Mod + V
 ***** Browsers
