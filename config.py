@@ -15,7 +15,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_width=2,
+    border_width=0,
     **border,
     float_rules=[
     *layout.Floating.default_float_rules,

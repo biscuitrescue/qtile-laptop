@@ -110,6 +110,7 @@ keys = [
         Key([], "f", lazy.spawn("firefox")),
         Key([], "v", lazy.spawn("vivaldi-stable")),
         Key([], "b", lazy.spawn("brave-bin")),
+        Key([], "b", lazy.spawn("qutebrowser")),
         Key([], "l", lazy.spawn("librewolf")),
     ]),
 ### EDITORS

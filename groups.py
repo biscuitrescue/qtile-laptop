@@ -114,13 +114,13 @@ keys.extend([
 ])
 border=dict(
     border_focus="#FE6973",
-    border_normal="#4c566a"
+    border_normal="#4c566a",
+    border_width=0,
 )
 
 layouts = [
     layout.Tile(
         margin=8,
-        border_width=2,
         ratio=0.55,
         shift_windows=True,
         **border
@@ -128,7 +128,6 @@ layouts = [
     layout.Bsp(
         fair=False,
         margin=8,
-        border_width=2,
         shift_windows=True,
         **border
     ),

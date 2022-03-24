@@ -20,13 +20,13 @@ colours =  [
 
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=7, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
     ],
     "padding": 10,
 }
 decor2 = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=7, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
     ],
     "padding": 3,
 }
