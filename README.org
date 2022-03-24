@@ -18,10 +18,10 @@
 
 *** Launchers:
 ***** * Rofi
-******* Mod + D -> drun
-******* Mod + R -> run
-******* Mod + Z -> window
-******* Mod + g -> filebrowser
+******      Mod + D -> drun
+******      Mod + R -> run
+******      Mod + Z -> window
+******      Mod + g -> filebrowser
 *** Dmenu:
 ****** Mod + Shift + Return -> dmenu_run -i -h 28 -p 'RUN:'
 
