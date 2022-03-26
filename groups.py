@@ -13,7 +13,7 @@ mod3  = "shift"
 home = os.path.expanduser('~')
 groups=[
     Group("1", label=""),
-    Group("2", label="", spawn="brave-bin",
+    Group("2", label="", spawn="vivaldi",
         matches=[Match(wm_class=["Vivaldi-stable"]),
                  Match(wm_class=["Icecat"]),
                  Match(wm_class=["LibreWolf"]),
@@ -74,13 +74,14 @@ for i in groups:
 ### ScratchPad
 
 groups.append(ScratchPad('Scratchpad',[
+    DropDown("sess", "./Applications/session-desktop-linux-x86_64-1.7.9.AppImage", height=0.6, width=0.5, x=0.25, y=0.225, opacity=1),
     DropDown("sig", "signal-desktop", height=0.6, width=0.5, x=0.25, y=0.225,
                  opacity=1),
     DropDown("term", "kitty",
              width=0.6, height=0.8,
              x=0.2, y=0.1, opacity=1),
     DropDown("editor", "emacs",
-             x=0.125, y=0.05, width=0.75, height=0.9, opacity=1,
+             x=0.1, y=0.05, width=0.8, height=0.9, opacity=1,
              on_focus_lost_hide=True),
     DropDown("fmger", "nautilus",
              width=0.6, height=0.85,
@@ -103,6 +104,7 @@ groups.append(ScratchPad('Scratchpad',[
 
 keys.extend([
     Key([mod, 'shift'], "v", lazy.group['Scratchpad'].dropdown_toggle('sig')),
+    Key([mod, 'shift'], "b", lazy.group['Scratchpad'].dropdown_toggle('sess')),
     Key([mod], "p", lazy.group['Scratchpad'].dropdown_toggle('term')),
     Key([mod], "o", lazy.group['Scratchpad'].dropdown_toggle('editor')),
     Key([mod, "shift"], "s", lazy.group['Scratchpad'].dropdown_toggle("spotify")),
