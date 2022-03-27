@@ -44,8 +44,8 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5")),
     Key([mod, "control"], "a", lazy.window.toggle_floating()),
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Down", lazy.layout.down()),
@@ -109,8 +109,8 @@ keys = [
     KeyChord([mod], "i",[
         Key([], "f", lazy.spawn("firefox")),
         Key([], "v", lazy.spawn("vivaldi-stable")),
-        Key([], "b", lazy.spawn("brave-bin")),
-        Key([], "b", lazy.spawn("qutebrowser")),
+        Key([], "b", lazy.spawn("brave")),
+        Key([], "q", lazy.spawn("qutebrowser")),
         Key([], "l", lazy.spawn("librewolf")),
     ]),
 ### EDITORS
@@ -126,10 +126,10 @@ keys = [
             ]),
 ### DMSCRIPTS
     KeyChord([mod], "x",[
-        Key([], "c", lazy.spawn("bash /home/trogdor/dmscripts/dmconf")),
-        Key([], "p", lazy.spawn("bash /home/trogdor/dmscripts/dmpy")),
-        Key([], "f", lazy.spawn("bash /home/trogdor/dmscripts/dmfeh")),
-        Key([], "b", lazy.spawn("bash /home/trogdor/dmscripts/pylaunch")),
+        Key([], "c", lazy.spawn("bash /home/mr_robot/dmscripts/dmconf")),
+        Key([], "p", lazy.spawn("bash /home/mr_robot/dmscripts/dmpy")),
+        Key([], "f", lazy.spawn("bash /home/mr_robot/dmscripts/dmfeh")),
+        Key([], "b", lazy.spawn("bash /home/mr_robot/dmscripts/pylaunch")),
             ]),
 
 ### REDSHIFT
