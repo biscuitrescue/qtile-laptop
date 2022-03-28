@@ -65,6 +65,16 @@ default=[
 
     widget.Spacer(),
 
+    widget.Systray(
+        background=colours[0],
+        foreground=colours[4],
+        icon_size=20,
+        padding=4,
+    ),
+    # widget.Sep(
+    #     padding=8,
+    #     linewidth=0,
+    # ),
     widget.Sep(
         padding=8,
         linewidth=0,
@@ -141,16 +151,6 @@ default=[
         fontsize=xx,
         format='  %I:%M %p',
         **decor,
-    ),
-    widget.Sep(
-        padding=8,
-        linewidth=0,
-    ),
-    widget.Systray(
-        background=colours[0],
-        foreground=colours[4],
-        icon_size=20,
-        padding=4,
     ),
     widget.Sep(
         padding=8,

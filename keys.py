@@ -85,7 +85,7 @@ keys = [
     Key([mod], "q", lazy.window.kill()),
     Key([mod, "shift"], "q", lazy.shutdown()),
     Key([mod], "c", lazy.restart()),
-    Key([mod, "shift"], "x", lazy.spawn("loginctl poweroff")),
+    Key([mod, "shift"], "x", lazy.spawn("poweroff")),
 
     Key(["shift"], "Print", lazy.spawn("clip")),
     Key(["control"], "Print", lazy.spawn("vmcrop")),
