@@ -7,15 +7,15 @@ from qtile_extras.bar import Bar
 
 colours =  [
     ["#00000000"],      # Colour 0
-    ["#1e1e2e"],        # Colour 1
-    ["#f28fad"],        # Colour 2
-    ["#abe9b3"],        # Colour 3
-    ["#fae3b0"],        # Colour 4
-    ["#d6acff"],        # Colour 5
+    ["#292d3e"],        # Colour 1
+    ["#ff8b92"],        # Colour 2
+    ["#c3e88d"],        # Colour 3
+    ["#ffe585"],        # Colour 4
+    ["#c792ea"],        # Colour 5
     ["#f5c2e7"],        # Colour 6
-    ["#89DCEB"],        # Colour 7
+    ["#82aaff"],        # Colour 7
     ["#F2779C"],        # Colour 8
-    ["#b5e8e0"],        # Colour 9
+    ["#89ddff"],        # Colour 9
     ["#ff6e6e"]]        # Colour 10
 
 decor = {
@@ -133,7 +133,7 @@ default=[
         linewidth=0,
     ),
     widget.Clock(
-        background=colours[5],
+        background=colours[2],
         foreground=colours[1],
         format='  %d %b, %a',
         font=xf,
@@ -145,8 +145,8 @@ default=[
         linewidth=0,
     ),
     widget.Clock(
-        background=colours[2],
         foreground=colours[1],
+        background=colours[5],
         font=xf,
         fontsize=xx,
         format='  %I:%M %p',
