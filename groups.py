@@ -26,6 +26,8 @@ groups=[
                    ]),
 
     Group("4", label="", matches=[Match(wm_class=["discord"]),
+                                   Match(wm_class=["Mailspring"]),
+                                   Match(wm_class=["Session"]),
                    ]),
 
     Group("5", label="",
