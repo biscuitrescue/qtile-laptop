@@ -7,7 +7,7 @@ from qtile_extras.bar import Bar
 
 colours =  [
     ["#00000000"],      # Colour 0
-    ["#292d3e"],        # Colour 1
+    ["#2e3440"],        # Colour 1
     ["#ff8b92"],        # Colour 2
     ["#c3e88d"],        # Colour 3
     ["#ffe585"],        # Colour 4
@@ -32,7 +32,7 @@ decor2 = {
 }
 
 xx=16
-xf="terminessttf nerd font bold"
+xf="operatormono nerd font medium"
 default=[
     widget.GroupBox(
         font="jetbrainsmono nerd font",
@@ -82,7 +82,7 @@ default=[
     widget.CPU(
         background=colours[9],
         foreground=colours[1],
-        format='  {load_percent}%',
+        format=' {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
@@ -98,7 +98,7 @@ default=[
         foreground=colours[1],
         measure_mem='G',
         measure_swap='G',
-        format=' {MemUsed: .2f} GB',
+        format='{MemUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -112,7 +112,7 @@ default=[
         fontsize=xx,
         foreground=colours[1],
         measure_swap='G',
-        format=' {SwapUsed: .2f} GB',
+        format='{SwapUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -135,7 +135,7 @@ default=[
     widget.Clock(
         background=colours[2],
         foreground=colours[1],
-        format='  %d %b, %a',
+        format=' %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
@@ -149,7 +149,7 @@ default=[
         background=colours[5],
         font=xf,
         fontsize=xx,
-        format='  %I:%M %p',
+        format=' %I:%M %p',
         **decor,
     ),
     widget.Sep(
@@ -179,21 +179,21 @@ else:
             low_foreground=colours[1],
             update_interval=1,
             charge_char='',
-            discharge_char=' ',
-            format='{char}  {percent:2.0%}',
+            discharge_char='',
+            format='{char} {percent:2.0%}',
             **decor,
         ),
     )
 
 screens = [
     Screen(
-    bottom=bar.Bar(
+    top=bar.Bar(
         default,
-        34,
+        30,
         background=colours[0],
         foreground=colours[1],
         opacity=1,
-        margin=[4,6,8,6],
+        margin=[8,6,4,6],
     ),
     ),
 ]
