@@ -19,8 +19,8 @@ xx=16
 xf="operatormono nerd font medium"
 default=[
     widget.GroupBox(
-        font=xf,
-        fontsize=xx,
+        font="operator mono medium",
+        fontsize=17,
         background=colours[1],
         margin_y=2,
         margin_x=5,
