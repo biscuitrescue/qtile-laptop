@@ -87,7 +87,7 @@ groups.append(ScratchPad('Scratchpad',[
     DropDown("fmger", "nautilus",
              width=0.6, height=0.85,
              x=0.2, y=0.075, opacity=1),
-    DropDown("spotify", "spotify", height=0.75, opacity=0.9,
+    DropDown("spotify", "spotify", height=0.75, opacity=1,
              width=0.7, x=0.15, y=0.15 ),
     DropDown("fm", 'kitty -e ranger',
              width=0.7, height=0.85,
@@ -115,9 +115,9 @@ keys.extend([
     Key([mod, 'shift'], 'space', lazy.group['Scratchpad'].dropdown_toggle('fmger')),
 ])
 border=dict(
-    border_focus="#FE6973",
+    border_focus="#aed1dc",
     border_normal="#4c566a",
-    border_width=0,
+    border_width=2,
 )
 
 layouts = [

@@ -6,8 +6,9 @@ from groups import groups, layouts
 from screens import screens
 
 border=dict(
-    border_focus="#FE6973",
-    border_normal="#4c566a"
+    border_focus="#aed1dc",
+    border_normal="#4c566a",
+    border_width=2,
 )
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
@@ -15,11 +16,11 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_width=0,
     **border,
     float_rules=[
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='Blueman-manager'),
     Match(wm_class='Tor Browser'),
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
