@@ -125,6 +125,7 @@ layouts = [
         margin=8,
         ratio=0.55,
         shift_windows=True,
+        border_on_single=False,
         **border
     ),
     layout.Bsp(
