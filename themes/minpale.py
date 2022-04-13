@@ -168,7 +168,7 @@ screens = [
         34,
         background=colours[1],
         foreground=colours[1],
-        opacity=0.9,
+        opacity=1,
         margin=[8,60,12,60],
     ),
     ),

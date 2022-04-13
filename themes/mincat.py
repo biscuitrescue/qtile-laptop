@@ -5,14 +5,14 @@ from libqtile import layout, bar, widget, hook
 colours =  [
     ["#D8DEE9"],      # Colour 0
     ["#1e1e2e"],        # Colour 1
-    ["#ff8b92"],        # Colour 2
-    ["#c3e88d"],        # Colour 3
-    ["#ffe585"],        # Colour 4
-    ["#c792ea"],        # Colour 5
+    ["#f28fad"],        # Colour 2
+    ["#abe9b3"],        # Colour 3
+    ["#fae3b0"],        # Colour 4
+    ["#d6acff"],        # Colour 5
     ["#f5c2e7"],        # Colour 6
-    ["#82aaff"],        # Colour 7
+    ["#89DCEB"],        # Colour 7
     ["#F2779C"],        # Colour 8
-    ["#81A1C1"],        # Colour 9
+    ["#b5e8e0"],        # Colour 9
     ["#ff6e6e"]]        # Colour 10
 
 xx=16
@@ -27,7 +27,7 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[9],
+        inactive=colours[8],
         active=colours[3],
         rounded=True,
         highlight_color=colours[4],
@@ -168,7 +168,7 @@ screens = [
         34,
         background=colours[1],
         foreground=colours[1],
-        opacity=1,
+        opacity=0.9,
         margin=[8,60,12,60],
     ),
     ),
