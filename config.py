@@ -1,12 +1,12 @@
-from libqtile import qtile, layout, bar, widget, hook 
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
+from libqtile import layout
+from libqtile.config import Match
 from typing import List  # noqa: F401
 from keys import keys
 from groups import groups, layouts
 from screens import screens
 
-border=dict(
-    border_focus="#d6acff",
+border = dict(
+    border_focus="#8ec07c",
     border_normal="#4c566a",
     border_width=2,
 )
@@ -18,18 +18,19 @@ cursor_warp = False
 floating_layout = layout.Floating(
     **border,
     float_rules=[
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='Blueman-manager'),
-    Match(wm_class='Tor Browser'),
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(wm_class='Tk'),  # ssh-askpass
-    Match(wm_class='Signal Beta'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-])
+        *layout.Floating.default_float_rules,
+        Match(wm_class='confirmreset'),  # gitk
+        Match(wm_class='Blueman-manager'),
+        Match(wm_class='Tor Browser'),
+        Match(wm_class='makebranch'),  # gitk
+        Match(wm_class='maketag'),  # gitk
+        Match(wm_class='ssh-askpass'),  # ssh-askpass
+        Match(wm_class='Tk'),  # ssh-askpass
+        Match(wm_class='Signal Beta'),  # ssh-askpass
+        Match(title='branchdialog'),  # gitk
+        Match(title='pinentry'),  # GPG key password entry
+    ])
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
