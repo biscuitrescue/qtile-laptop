@@ -4,7 +4,7 @@ from libqtile import layout, bar, widget, hook
 
 colours =  [
     ["#D8DEE9"],      # Colour 0
-    ["#1e1e2e"],        # Colour 1
+    ["#282d3e"],        # Colour 1
     ["#ff8b92"],        # Colour 2
     ["#c3e88d"],        # Colour 3
     ["#ffe585"],        # Colour 4
