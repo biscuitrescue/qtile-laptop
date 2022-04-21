@@ -2,7 +2,7 @@ from libqtile import layout
 from libqtile.config import Match
 from typing import List  # noqa: F401
 from keys import keys
-from groups import groups, layouts
+from groups import groups
 from screens import screens
 
 border = dict(
@@ -10,6 +10,26 @@ border = dict(
     border_normal="#4c566a",
     border_width=2,
 )
+layouts = [
+    layout.Tile(
+        margin=8,
+        ratio=0.55,
+        shift_windows=True,
+        **border
+    ),
+    layout.Bsp(
+        fair=False,
+        margin=8,
+        shift_windows=True,
+        **border
+    ),
+    layout.Zoomy(
+        columnwidth=350,
+        margin=8,
+    ),
+    layout.Max(),
+
+]
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True

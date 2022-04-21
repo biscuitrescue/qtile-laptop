@@ -1,18 +1,18 @@
 import os
-from libqtile.config import Screen
+from libqtile.config import Screen 
 from libqtile import layout, bar, widget, hook
 
 colours =  [
-    ["#282828"],      # Colour 0
-    ["#fbf1c7"],        # Colour 1
+    ["#D8DEE9"],      # Colour 0
+    ["#282d3e"],        # Colour 1
     ["#ff8b92"],        # Colour 2
-    ["#b8bb26"],        # Colour 3
-    ["#fabd21"],        # Colour 4
+    ["#c3e88d"],        # Colour 3
+    ["#ffe585"],        # Colour 4
     ["#c792ea"],        # Colour 5
-    ["#d3689b"],        # Colour 6
+    ["#f5c2e7"],        # Colour 6
     ["#82aaff"],        # Colour 7
     ["#F2779C"],        # Colour 8
-    ["#83a598"],        # Colour 9
+    ["#81A1C1"],        # Colour 9
     ["#ff6e6e"]]        # Colour 10
 
 xx=16
@@ -23,16 +23,16 @@ default=[
         fontsize=17,
         background=colours[1],
         margin_y=4,
-        margin_x=5  ,
+        margin_x=5,
         padding_y=3,
         padding_x=2,
         borderwidth=8,
         inactive=colours[9],
-        active=colours[10],
+        active=colours[3],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="block",
-        this_current_screen_border=colours[0],
+        this_current_screen_border=colours[8],
         block_highlight_text_color=colours[1],
     ),
     widget.Sep(
@@ -48,7 +48,7 @@ default=[
     widget.Spacer(),
 
     widget.Systray(
-        background=colours[0],
+        foreground=colours[4],
         icon_size=20,
         padding=4,
     ),

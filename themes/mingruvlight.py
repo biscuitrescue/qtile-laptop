@@ -52,9 +52,14 @@ default=[
         icon_size=20,
         padding=4,
     ),
+    widget.Sep(
+        background=colours[0],
+        padding=4,
+        linewidth=0,
+    ),
     widget.TextBox(
         foreground=colours[9],
-        text=" | ",
+        text="| ",
         font=xf,
     ),
     widget.CPU(

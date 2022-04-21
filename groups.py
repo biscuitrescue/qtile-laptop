@@ -133,29 +133,3 @@ keys.extend([
     Key([mod, 'shift'], 'space',
         lazy.group['Scratchpad'].dropdown_toggle('fmger')),
 ])
-border = dict(
-    border_focus="#8ec07c",
-    border_normal="#4c566a",
-    border_width=2,
-)
-
-layouts = [
-    layout.Tile(
-        margin=8,
-        ratio=0.55,
-        shift_windows=True,
-        **border
-    ),
-    layout.Bsp(
-        fair=False,
-        margin=8,
-        shift_windows=True,
-        **border
-    ),
-    layout.Zoomy(
-        columnwidth=350,
-        margin=8,
-    ),
-    layout.Max(),
-
-]

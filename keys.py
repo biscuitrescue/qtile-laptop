@@ -88,7 +88,7 @@ keys = [
 
     Key(["shift"], "Print", lazy.spawn("clip")),
     Key(["control"], "Print", lazy.spawn("vmcrop")),
-    Key([mod], "Print", lazy.spawn("crop")),
+    Key(["control"], "Print", lazy.spawn("crop")),
     Key([], "Print", lazy.spawn("shot")),
 
     # APPLICATIONS
