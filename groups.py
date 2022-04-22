@@ -13,62 +13,72 @@ home = os.path.expanduser('~')
 groups = [
     Group("1", label="I"),
     Group("2", label="II", spawn="vivaldi-stable",
-          matches=[Match(wm_class=["Vivaldi-stable"]),
-                   Match(wm_class=["Icecat"]),
-                   Match(wm_class=["LibreWolf"]),
-                   Match(wm_class=["Brave-browser"]),
-                   ]
+        matches=[
+            Match(wm_class=["Vivaldi-stable"]),
+            Match(wm_class=["Icecat"]),
+            Match(wm_class=["LibreWolf"]),
+            Match(wm_class=["Brave-browser"]),
+        ]
           ),
 
+
     Group("3", label="III", layout="zoomy",
-          matches=[Match(wm_class=["Zathura"]),
-                   Match(wm_class=["Evince"]),
-                   ]
+        matches=[
+            Match(wm_class=["Zathura"]),
+            Match(wm_class=["Evince"]),
+        ]
           ),
 
     Group("4", label="IV",
-          matches=[Match(wm_class=["discord"]),
-                   Match(wm_class=["Mailspring"]),
-                   Match(wm_class=["Session"]),
-                   ]
+        matches=[
+            Match(wm_class=["discord"]),
+            Match(wm_class=["Mailspring"]),
+            Match(wm_class=["Session"]),
+        ]
           ),
 
     Group("5", label="V",
-          matches=[Match(wm_class=["Firefox"]),
-                   Match(wm_class=["firefox"]),
-                   Match(wm_class=["Mplayer"]),
-                   ]
+        matches=[
+            Match(wm_class=["Firefox"]),
+            Match(wm_class=["firefox"]),
+            Match(wm_class=["Mplayer"]),
+        ]
           ),
 
     Group("6", label="VI",
-          matches=[Match(wm_class=["pcmanfm"]),
-                   Match(wm_class=["qBittorrent"]),
-                   ]
+        matches=[
+            Match(wm_class=["pcmanfm"]),
+            Match(wm_class=["qBittorrent"]),
+        ]
           ),
 
     Group("7", label="VII",
-          matches=[Match(wm_class=["pavucontrol"]),
-                   ]
+        matches=[
+            Match(wm_class=["pavucontrol"]),
+        ]
           ),
 
     Group("8", label="VIII",
           ),
 
     Group("9", label="IX", layout="max",
-          matches=[Match(wm_class=["zoom"]),
-                   Match(wm_class=["Microsoft Teams - Preview"]),
-                   ]
+        matches=[
+            Match(wm_class=["zoom"]),
+            Match(wm_class=["Microsoft Teams - Preview"]),
+        ]
           ),
 
     Group("0", label="X",
-          matches=[Match(wm_class=["Virt-manager"]),
-                   Match(wm_class=["VirtualBox Manager"]),
-                   ]
+        matches=[
+            Match(wm_class=["Virt-manager"]),
+            Match(wm_class=["VirtualBox Manager"]),
+        ]
           ),
 
     Group('f', label='',
-          matches=[Match(wm_class=["Signal Beta"]),
-                   ]
+        matches=[
+            Match(wm_class=["Signal Beta"]),
+        ]
           ),
 ]
 for i in groups:
