@@ -4,35 +4,35 @@ from libqtile import layout, bar, widget, hook
 
 colours =  [
     ["#D8DEE9"],      # Colour 0
-    ["#1e1e2e"],        # Colour 1
-    ["#f28fad"],        # Colour 2
-    ["#abe9b3"],        # Colour 3
-    ["#fae3b0"],        # Colour 4
-    ["#d6acff"],        # Colour 5
+    ["#282d3e"],        # Colour 1
+    ["#ff8b92"],        # Colour 2
+    ["#c3e88d"],        # Colour 3
+    ["#ffe585"],        # Colour 4
+    ["#c792ea"],        # Colour 5
     ["#f5c2e7"],        # Colour 6
-    ["#89DCEB"],        # Colour 7
-    ["#C9CBFF"],        # Colour 8
-    ["#b5e8e0"],        # Colour 9
-    ["#F2779C"]]        # Colour 10
+    ["#82aaff"],        # Colour 7
+    ["#F2779C"],        # Colour 8
+    ["#81A1C1"],        # Colour 9
+    ["#ff6e6e"]]        # Colour 10
 
-xx=17
+xx=16
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="ubuntumono nerd font bold",
-        fontsize=16,
+        font=xf,
+        fontsize=xx,
         background=colours[1],
         margin_y=4,
         margin_x=5,
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[8],
+        inactive=colours[9],
         active=colours[3],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="block",
-        this_current_screen_border=colours[10],
+        this_current_screen_border=colours[8],
         block_highlight_text_color=colours[1],
     ),
     widget.Sep(
@@ -102,12 +102,12 @@ default=[
         fontsize=xx,
     ),
     widget.TextBox(
-        foreground=colours[8],
+        foreground=colours[2],
         text=" | ",
         font=xf,
     ),
     widget.Clock(
-        foreground=colours[8],
+        foreground=colours[2],
         format='  %d %b, %a',
         font=xf,
         fontsize=xx,
@@ -168,7 +168,7 @@ screens = [
         34,
         background=colours[1],
         foreground=colours[1],
-        opacity=0.95,
+        opacity=1,
         margin=[8,60,12,60],
     ),
     ),
