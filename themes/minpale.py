@@ -16,11 +16,11 @@ colours =  [
     ["#ff6e6e"]]        # Colour 10
 
 xx=16
-xf="operatormono nerd font medium"
+xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="operator mono medium",
-        fontsize=17,
+        font=xf,
+        fontsize=xx,
         background=colours[1],
         margin_y=4,
         margin_x=5,
@@ -59,7 +59,7 @@ default=[
     ),
     widget.CPU(
         foreground=colours[9],
-        format=' {load_percent}%',
+        format='  {load_percent}%',
         font=xf,
         fontsize=xx,
     ),
@@ -74,7 +74,7 @@ default=[
         foreground=colours[4],
         measure_mem='G',
         measure_swap='G',
-        format='{MemUsed: .2f} GB',
+        format=' {MemUsed: .2f} GB',
     ),
     widget.TextBox(
         foreground=colours[6],
@@ -87,7 +87,7 @@ default=[
         fontsize=xx,
         foreground=colours[6],
         measure_swap='G',
-        format='{SwapUsed: .2f} GB',
+        format=' {SwapUsed: .2f} GB',
     ),
     widget.TextBox(
         foreground=colours[3],
@@ -108,7 +108,7 @@ default=[
     ),
     widget.Clock(
         foreground=colours[2],
-        format=' %d %b, %a',
+        format='  %d %b, %a',
         font=xf,
         fontsize=xx,
     ),
@@ -121,7 +121,7 @@ default=[
         foreground=colours[5],
         font=xf,
         fontsize=xx,
-        format=' %I:%M %p',
+        format='  %I:%M %p',
     ),
     widget.TextBox(
         foreground=colours[7],
@@ -149,9 +149,9 @@ else:
                 low_foreground=colours[1],
                 update_interval=1,
                 charge_char='',
-                discharge_char='',
+                discharge_char=' ',
                 foreground=colours[7],
-                format='{char} {percent:2.0%}',
+                format='{char}  {percent:2.0%}',
             ),
             widget.TextBox(
                 foreground=colours[7],

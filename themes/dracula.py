@@ -10,14 +10,14 @@ colours =  [
         ["#282a36"], # color 1
         ["#adefd1"], # color 2
         ["#f8baaf"], # color 3
-        ["#FF7696"], # color 4
+        ["#FF6e6e"], # color 4
         ["#f3f4f5"], # color 5
         ["#ffb18f"], # color 6
         ["#7AEEAA"], # color 7
         ["#B591B0"], # color 8
         ["#50fa7b"], # color 9
         ["#8be9fd"], # color 10
-        ["#ff6e6e"]] # color 10
+        ["#ff5555"]] # color 10
 
 
 # extension_defaults = widget_defaults.copy()
@@ -35,10 +35,10 @@ decor2 = {
 }
 
 xx=15
-xf="space mono for powerline bold"
+xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="Space mono for powerline",
+        font="ubuntumono nerd font bold",
         fontsize=15,
         background="#282c3485",
         foreground=colours[5],
