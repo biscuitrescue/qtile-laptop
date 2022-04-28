@@ -16,39 +16,40 @@ colours =  [
     ["#89DCEB"],        # Colour 7
     ["#F2779C"],        # Colour 8
     ["#b5e8e0"],        # Colour 9
-    ["#ff6e6e"]]        # Colour 10
+    ["#ff6e6e"],        # Colour 10
+    ["#C9CBFF"]]        # Colour 11
 
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0)
     ],
-    "padding": 10,
+    "padding": 12,
 }
 decor2 = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0,)
     ],
     "padding": 3,
 }
 
 xx=16
-xf="terminessttf nerd font bold"
+xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="jetbrainsmono nerd font",
-        fontsize=25,
-        background="#1e1e2e99",
-        margin_y=4,
+        font=xf,
+        fontsize=15,
+        background="#1e1e2e",
+        margin_y=3,
         margin_x=5,
-        padding_y=9,
+        padding_y=3,
         padding_x=2,
-        borderwidth=7,
-        inactive=colours[6],
+        borderwidth=8,
+        inactive=colours[11],
         active=colours[3],
         rounded=True,
         highlight_color=colours[4],
-        highlight_method="text",
-        this_current_screen_border=colours[10],
+        highlight_method="block",
+        this_current_screen_border=colours[2],
         block_highlight_text_color=colours[1],
         **decor,
     ),
@@ -187,13 +188,13 @@ else:
 
 screens = [
     Screen(
-    bottom=bar.Bar(
+    top=bar.Bar(
         default,
-        34,
+        35,
         background=colours[0],
         foreground=colours[1],
         opacity=1,
-        margin=[4,6,8,6],
+        margin=[10,15,2,15],
     ),
     ),
 ]

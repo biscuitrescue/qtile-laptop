@@ -1,9 +1,12 @@
 import os
 from libqtile.config import Screen 
 from libqtile import layout, bar, widget, hook
+from qtile_extras import widget
+from qtile_extras.widget.decorations import RectDecoration
+from qtile_extras.bar import Bar
 
 colours =  [
-    ["#D8DEE9"],      # Colour 0
+    ["#00000000"],      # Colour 0
     ["#1e1e2e"],        # Colour 1
     ["#f28fad"],        # Colour 2
     ["#abe9b3"],        # Colour 3
@@ -11,29 +14,44 @@ colours =  [
     ["#d6acff"],        # Colour 5
     ["#f5c2e7"],        # Colour 6
     ["#89DCEB"],        # Colour 7
-    ["#C9CBFF"],        # Colour 8
+    ["#F2779C"],        # Colour 8
     ["#b5e8e0"],        # Colour 9
-    ["#F2779C"]]        # Colour 10
+    ["#ff6e6e"],        # Colour 10
+    ["#C9CBFF"]]        # Colour 11
 
-xx=17
+decor = {
+    "decorations": [
+        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0)
+    ],
+    "padding": 12,
+}
+decor2 = {
+    "decorations": [
+        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0,)
+    ],
+    "padding": 3,
+}
+
+xx=16
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="ubuntumono nerd font bold",
-        fontsize=16,
-        background=colours[1],
-        margin_y=4,
+        font=xf,
+        fontsize=15,
+        background="#1e1e2e",
+        margin_y=3,
         margin_x=5,
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[8],
+        inactive=colours[11],
         active=colours[3],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="block",
-        this_current_screen_border=colours[10],
+        this_current_screen_border=colours[2],
         block_highlight_text_color=colours[1],
+        **decor,
     ),
     widget.Sep(
         padding=8,
@@ -41,92 +59,103 @@ default=[
     ),
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-        scale=0.5,
-        background=colours[1],
+        scale=0.4,
+        background="#1e1e2e99",
+        **decor2,
     ),
 
     widget.Spacer(),
 
     widget.Systray(
+        background=colours[0],
         foreground=colours[4],
         icon_size=20,
         padding=4,
     ),
-    widget.TextBox(
-        foreground=colours[9],
-        text=" | ",
-        font=xf,
+    # widget.Sep(
+    #     padding=8,
+    #     linewidth=0,
+    # ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.CPU(
-        foreground=colours[9],
+        background=colours[9],
+        foreground=colours[1],
         format='  {load_percent}%',
         font=xf,
         fontsize=xx,
-    ),
-    widget.TextBox(
-        foreground=colours[4],
-        text=" | ",
-        font=xf,
+        **decor,
+        ),
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.Memory(
+        background=colours[4],
         font=xf,
         fontsize=xx,
-        foreground=colours[4],
+        foreground=colours[1],
         measure_mem='G',
         measure_swap='G',
-        format='  {MemUsed: .2f} GB',
+        format=' {MemUsed: .2f} GB',
+        **decor,
     ),
-    widget.TextBox(
-        foreground=colours[6],
-        text=" | ",
-        font=xf,
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.Memory(
         measure_mem='G',
+        background=colours[6],
         font=xf,
         fontsize=xx,
-        foreground=colours[6],
+        foreground=colours[1],
         measure_swap='G',
         format=' {SwapUsed: .2f} GB',
+        **decor,
     ),
-    widget.TextBox(
-        foreground=colours[3],
-        text=" | ",
-        font=xf,
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.PulseVolume(
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
-        foreground=colours[3],
+        foreground=colours[1],
         update_interval=0.001,
         font=xf,
         fontsize=xx,
+        background=colours[3],
+        **decor
     ),
-    widget.TextBox(
-        foreground=colours[8],
-        text=" | ",
-        font=xf,
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.Clock(
-        foreground=colours[8],
+        background=colours[5],
+        foreground=colours[1],
         format='  %d %b, %a',
         font=xf,
         fontsize=xx,
+        **decor,
     ),
-    widget.TextBox(
-        foreground=colours[5],
-        text=" | ",
-        font=xf,
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
     widget.Clock(
-        foreground=colours[5],
+        background=colours[2],
+        foreground=colours[1],
         font=xf,
         fontsize=xx,
         format='  %I:%M %p',
+        **decor,
     ),
-    widget.TextBox(
-        foreground=colours[7],
-        text=" | ",
-        font=xf,
+    widget.Sep(
+        padding=8,
+        linewidth=0,
     ),
 ]
 if len(os.listdir("/sys/class/power_supply"))==0:
@@ -136,40 +165,36 @@ if len(os.listdir("/sys/class/power_supply"))==0:
             font=xf,
             foreground=colours[1],
             background=colours[7],
+            **decor,
         )
     )
 else:
-    default.extend(
-        [
-            widget.Battery(
-                fontsize=xx,
-                font=xf,
-                low_percentage=0.3,
-                low_background=colours[10],
-                low_foreground=colours[1],
-                update_interval=1,
-                charge_char='',
-                discharge_char=' ',
-                foreground=colours[7],
-                format='{char}  {percent:2.0%}',
-            ),
-            widget.TextBox(
-                foreground=colours[7],
-                text=" |",
-                font=xf,
-            ),
-        ]
+    default.append(
+        widget.Battery(
+            fontsize=xx,
+            font=xf,
+            foreground=colours[1],
+            low_percentage=0.3,
+            low_background=colours[10],
+            background=colours[7],
+            low_foreground=colours[1],
+            update_interval=1,
+            charge_char='',
+            discharge_char=' ',
+            format='{char}  {percent:2.0%}',
+            **decor,
+        ),
     )
 
 screens = [
     Screen(
     top=bar.Bar(
         default,
-        34,
-        background=colours[1],
+        35,
+        background=colours[0],
         foreground=colours[1],
-        opacity=0.95,
-        margin=[8,60,12,60],
+        opacity=1,
+        margin=[10,15,2,15],
     ),
     ),
 ]
