@@ -38,7 +38,7 @@ default=[
     widget.GroupBox(
         font=xf,
         fontsize=xx,
-        background="#1e1e2e",
+        background="#1e1e2e99",
         margin_y=3,
         margin_x=5,
         padding_y=3,
