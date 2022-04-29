@@ -37,7 +37,7 @@ xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
         font=xf,
-        fontsize=15,
+        fontsize=xx,
         background="#1e1e2e",
         margin_y=3,
         margin_x=5,
