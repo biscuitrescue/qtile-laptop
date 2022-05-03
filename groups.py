@@ -11,8 +11,8 @@ mod2 = "control"
 mod3 = "shift"
 home = os.path.expanduser('~')
 groups = [
-    Group("1", label="I"),
-    Group("2", label="II", spawn="vivaldi-stable",
+    Group("1", label=""),
+    Group("2", label="", spawn="vivaldi-stable",
         matches=[
             Match(wm_class=["Vivaldi-stable"]),
             Match(wm_class=["Icecat"]),
@@ -22,14 +22,14 @@ groups = [
           ),
 
 
-    Group("3", label="III", layout="zoomy",
+    Group("3", label="", layout="zoomy",
         matches=[
             Match(wm_class=["Zathura"]),
             Match(wm_class=["Evince"]),
         ]
           ),
 
-    Group("4", label="IV",
+    Group("4", label="",
         matches=[
             Match(wm_class=["discord"]),
             Match(wm_class=["Mailspring"]),
@@ -37,7 +37,7 @@ groups = [
         ]
           ),
 
-    Group("5", label="V",
+    Group("5", label="",
         matches=[
             Match(wm_class=["Firefox"]),
             Match(wm_class=["firefox"]),
@@ -45,30 +45,30 @@ groups = [
         ]
           ),
 
-    Group("6", label="VI",
+    Group("6", label="",
         matches=[
             Match(wm_class=["pcmanfm"]),
             Match(wm_class=["qBittorrent"]),
         ]
           ),
 
-    Group("7", label="VII",
+    Group("7", label="",
         matches=[
             Match(wm_class=["pavucontrol"]),
         ]
           ),
 
-    Group("8", label="VIII",
+    Group("8", label="",
           ),
 
-    Group("9", label="IX", layout="max",
+    Group("9", label="", layout="max",
         matches=[
             Match(wm_class=["zoom"]),
             Match(wm_class=["Microsoft Teams - Preview"]),
         ]
           ),
 
-    Group("0", label="X",
+    Group("0", label="",
         matches=[
             Match(wm_class=["Virt-manager"]),
             Match(wm_class=["VirtualBox Manager"]),
