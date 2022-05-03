@@ -25,25 +25,22 @@ decor = {
     ],
     "padding": 12,
 }
-decor2 = {
-    "decorations": [
-        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0,)
-    ],
-    "padding": 3,
-}
+
+decor2 = decor.copy()
+decor2["padding"] = 3
 
 xx=16
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
         font=xf,
-        fontsize=15,
-        background="#1e1e2e",
+        fontsize=xx,
+        background="#1e1e2e99",
         margin_y=3,
         margin_x=5,
         padding_y=3,
         padding_x=2,
-        borderwidth=8,
+        borderwidth=9,
         inactive=colours[11],
         active=colours[3],
         rounded=True,
@@ -120,6 +117,12 @@ default=[
         padding=8,
         linewidth=0,
     ),
+    # widget.ALSAWidget(
+    #     font=xf,
+    #     fontsize=xx,
+    #     update_interval=0.01,
+    #     hide_interval=5,
+    # ),
     widget.PulseVolume(
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
         foreground=colours[1],
