@@ -24,12 +24,9 @@ decor = {
     ],
     "padding": 10,
 }
-decor2 = {
-    "decorations": [
-        RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0,)
-    ],
-    "padding": 3,
-}
+
+decor2 = decor.copy()
+decor2["padding"] = 3
 
 xx=16
 xf="ubuntumono nerd font bold"
@@ -59,7 +56,7 @@ default=[
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.4,
-        background="#1e1e2e99",
+        background="#292d3e99",
         **decor2,
     ),
 
