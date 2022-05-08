@@ -20,26 +20,21 @@ colours =  [
         ["#ff5555"]] # color 10
 
 
-# extension_defaults = widget_defaults.copy()
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0,)
     ],
-    "padding": 5,
+    "padding": 3,
 }
-decor2 = {
-    "decorations": [
-        RectDecoration(use_widget_background=True, radius=11, filled=True, padding_y=0)
-    ],
-    "padding": 10,
-}
+decor2 = decor.copy()
+decor2["padding"] = 10
 
 xx=15
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="ubuntumono nerd font bold",
-        fontsize=15,
+        font=xf,
+        fontsize=25,
         background="#282c3485",
         foreground=colours[5],
         margin_y=4,
@@ -111,7 +106,7 @@ default=[
         fontsize=xx,
         background=colours[3],
         measure_swap='G',
-        format=' {SwapUsed: .2f} GB ',
+        format='  {SwapUsed: .2f} GB ',
         **decor,
     ),
     widget.Sep(
@@ -149,7 +144,7 @@ default=[
     widget.Clock(
         background=colours[8],
         foreground=colours[1],
-        format='  %d %b, %a ',
+        format='   %d %b, %a ',
         font=xf,
         fontsize=xx,
         **decor,
@@ -202,7 +197,7 @@ else:
             background=colours[9],
             low_foreground=colours[1],
             update_interval=1,
-            charge_char='',
+            charge_char=' ',
             discharge_char='',
             format=' {char} {percent:2.0%} ',
             **decor,
@@ -211,12 +206,12 @@ else:
 
 screens = [
     Screen(
-    bottom=bar.Bar(
+    top=bar.Bar(
         default,
         35,
         background=colours[0],
         foreground=colours[1],
-        margin=[4,6,8,6],
+        margin=[8,6,4,6],
     ),
     ),
 ]

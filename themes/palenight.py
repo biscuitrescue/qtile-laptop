@@ -20,35 +20,32 @@ colours =  [
 
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
+        RectDecoration(use_widget_background=True, radius=13, filled=True, padding_y=0,)
     ],
     "padding": 10,
 }
-decor2 = {
-    "decorations": [
-        RectDecoration(use_widget_background=True, radius=9, filled=True, padding_y=0,)
-    ],
-    "padding": 3,
-}
+
+decor2 = decor.copy()
+decor2["padding"] = 3
 
 xx=16
-xf="operatormono nerd font medium"
+xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
-        font="jetbrainsmono nerd font",
-        fontsize=25,
-        background="#1e1e2e99",
+        font=xf,
+        fontsize=26,
+        background="#292d3e99",
         margin_y=4,
         margin_x=5,
         padding_y=9,
-        padding_x=2,
+        padding_x=5,
         borderwidth=7,
-        inactive=colours[6],
-        active=colours[3],
+        inactive=colours[7],
+        active=colours[6],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="text",
-        this_current_screen_border=colours[10],
+        this_current_screen_border=colours[3],
         block_highlight_text_color=colours[1],
         **decor,
     ),
@@ -59,7 +56,7 @@ default=[
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.4,
-        background="#1e1e2e99",
+        background="#292d3e99",
         **decor2,
     ),
 
@@ -82,7 +79,7 @@ default=[
     widget.CPU(
         background=colours[9],
         foreground=colours[1],
-        format=' {load_percent}%',
+        format='  {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
@@ -98,7 +95,7 @@ default=[
         foreground=colours[1],
         measure_mem='G',
         measure_swap='G',
-        format='{MemUsed: .2f} GB',
+        format=' {MemUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -112,7 +109,7 @@ default=[
         fontsize=xx,
         foreground=colours[1],
         measure_swap='G',
-        format='{SwapUsed: .2f} GB',
+        format=' {SwapUsed: .2f} GB',
         **decor,
     ),
     widget.Sep(
@@ -135,7 +132,7 @@ default=[
     widget.Clock(
         background=colours[2],
         foreground=colours[1],
-        format=' %d %b, %a',
+        format='  %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
@@ -149,7 +146,7 @@ default=[
         background=colours[5],
         font=xf,
         fontsize=xx,
-        format=' %I:%M %p',
+        format='  %I:%M %p',
         **decor,
     ),
     widget.Sep(
@@ -179,8 +176,8 @@ else:
             low_foreground=colours[1],
             update_interval=1,
             charge_char='',
-            discharge_char='',
-            format='{char} {percent:2.0%}',
+            discharge_char=' ',
+            format='{char}  {percent:2.0%}',
             **decor,
         ),
     )
@@ -189,7 +186,7 @@ screens = [
     Screen(
     top=bar.Bar(
         default,
-        30,
+        34,
         background=colours[0],
         foreground=colours[1],
         opacity=1,
