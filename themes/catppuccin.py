@@ -34,7 +34,7 @@ xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
         font=xf,
-        fontsize=xx,
+        fontsize=25,
         background="#1e1e2e99",
         margin_y=3,
         margin_x=5,
@@ -45,7 +45,7 @@ default=[
         active=colours[3],
         rounded=True,
         highlight_color=colours[4],
-        highlight_method="block",
+        highlight_method="text",
         this_current_screen_border=colours[2],
         block_highlight_text_color=colours[1],
         **decor,

@@ -36,6 +36,7 @@ keys = [
 
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
     Key([], "XF86AudioMicMute", lazy.spawn("mictoggle")),
+    Key([], "F4", lazy.spawn("mictoggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 5")),
 
