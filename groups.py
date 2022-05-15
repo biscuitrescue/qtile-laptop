@@ -103,7 +103,7 @@ groups.append(ScratchPad('Scratchpad', [
              # x=0.05, y=0, opacity=1),
              width=0.75, height=0.9,
              x=0.125, y=0.05, opacity=1),
-    DropDown("editor", "emacs",
+    DropDown("editor", "kitty -e nvim",
              width=0.9, height=0.9,
              x=0.05, y=0.05, opacity=1),
     DropDown("fmger", "nautilus",

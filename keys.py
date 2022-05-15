@@ -44,6 +44,8 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
+    Key([mod], "Prior", lazy.spawn("light -A 5")),
+    Key([mod], "Next", lazy.spawn("light -U 5")),
     Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5")),
     Key([mod, "control"], "a", lazy.window.toggle_floating()),

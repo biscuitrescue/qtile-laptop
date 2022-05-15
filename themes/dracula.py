@@ -29,7 +29,7 @@ decor = {
 decor2 = decor.copy()
 decor2["padding"] = 10
 
-xx=15
+xx=16
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
