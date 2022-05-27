@@ -24,7 +24,7 @@ decor = {
             use_widget_background=True,
             radius=12,
             filled=True,
-            padding_y=6,
+            padding_y=7,
         )
     ],
     "padding": 10,
@@ -51,19 +51,18 @@ default=[
         block_highlight_text_color=colours[1],
     ),
     widget.Sep(
-        padding=8,
+        padding=2,
         linewidth=0,
     ),
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-        scale=0.5,
+        scale=0.45,
         background=colours[1],
     ),
 
     widget.Spacer(),
 
     widget.Systray(
-        foreground=colours[4],
         icon_size=20,
         padding=4,
     ),
@@ -164,7 +163,12 @@ if len(os.listdir("/sys/class/power_supply"))==0:
             foreground=colours[1],
             background=colours[7],
             **decor,
-        )
+        ),
+        widget.TextBox(
+            foreground=colours[7],
+            text="|",
+            font=xf,
+        ),
     )
 else:
     default.extend(
@@ -195,11 +199,11 @@ screens = [
     Screen(
     top=bar.Bar(
         default,
-        42,
+        44,
         background=colours[1],
         foreground=colours[1],
         opacity=0.95,
-        margin=[8,60,12,60],
+        margin=[8,10,12,10],
     ),
     ),
 ]
