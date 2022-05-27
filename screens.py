@@ -157,18 +157,20 @@ default=[
 ]
 if len(os.listdir("/sys/class/power_supply"))==0:
     default.extend(
-        widget.CapsNumLockIndicator(
-            fontsize=xx,
-            font=xf,
-            foreground=colours[1],
-            background=colours[7],
-            **decor,
-        ),
-        widget.TextBox(
-            foreground=colours[7],
-            text="|",
-            font=xf,
-        ),
+        [
+            widget.CapsNumLockIndicator(
+                fontsize=xx,
+                font=xf,
+                foreground=colours[1],
+                background=colours[7],
+                **decor,
+            ),
+            widget.TextBox(
+                foreground=colours[7],
+                text="|",
+                font=xf,
+            ),
+        ]
     )
 else:
     default.extend(
