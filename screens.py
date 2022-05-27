@@ -205,7 +205,7 @@ screens = [
         background=colours[1],
         foreground=colours[1],
         opacity=0.95,
-        margin=[8,10,12,10],
+        margin=[8,30,12,30],
     ),
     ),
 ]
