@@ -156,7 +156,7 @@ default=[
     ),
 ]
 if len(os.listdir("/sys/class/power_supply"))==0:
-    default.append(
+    default.extend(
         widget.CapsNumLockIndicator(
             fontsize=xx,
             font=xf,
