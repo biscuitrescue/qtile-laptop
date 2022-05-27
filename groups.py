@@ -76,9 +76,9 @@ groups = [
           ),
 
     Group('f', label='',
-        matches=[
-            Match(wm_class=["Signal Beta"]),
-        ]
+        # matches=[
+        #     Match(wm_class=["Signal Beta"]),
+        # ]
           ),
 ]
 for i in groups:
@@ -105,7 +105,7 @@ groups.append(ScratchPad('Scratchpad', [
              x=0.125, y=0.05, opacity=1),
     DropDown("editor", "emacs",
              width=0.9, height=0.9,
-             x=0.05, y=0.05, opacity=1),
+             x=0.05, y=0.05, opacity=0.9),
     DropDown("fmger", "nautilus",
              width=0.6, height=0.85,
              x=0.2, y=0.075, opacity=1),
