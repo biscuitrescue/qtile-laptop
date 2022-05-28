@@ -22,7 +22,7 @@ decor = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=9,
+            radius=11,
             filled=True,
             padding_y=7,
         )
@@ -205,7 +205,7 @@ screens = [
         background=colours[1],
         foreground=colours[1],
         opacity=0.95,
-        margin=[8,30,12,30],
+        margin=[8,10,2,10],
     ),
     ),
 ]

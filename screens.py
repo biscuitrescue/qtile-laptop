@@ -45,6 +45,9 @@ default=[
         inactive=colours[9],
         active=colours[5],
         rounded=True,
+        invert_mouse_wheel=True,
+        urgent_alert_method="text",
+        urgent_text=colours[10],
         highlight_color=colours[4],
         highlight_method="text",
         this_current_screen_border=colours[3],
@@ -114,7 +117,7 @@ default=[
         text="|",
         font=xf,
     ),
-    widget.PulseVolume(
+    widget.Volume(
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
         background=colours[3],
         foreground=colours[1],
@@ -175,6 +178,20 @@ if len(os.listdir("/sys/class/power_supply"))==0:
 else:
     default.extend(
         [
+            # widget.UPowerWidget(
+            #     font=xf,
+            #     battery_width=28,
+            #     battery_height=14,
+            #     fontsize=xx,
+            #     background=colours[1],
+            #     border_charge_colour=colours[7],
+            #     margin=10,
+            # ),
+            # widget.TextBox(
+            #     foreground=colours[7],
+            #     text="|",
+            #     font=xf,
+            # ),
             widget.Battery(
                 fontsize=xx,
                 font=xf,
@@ -205,7 +222,7 @@ screens = [
         background=colours[1],
         foreground=colours[1],
         opacity=0.95,
-        margin=[8,30,2,30],
+        margin=[8,10,2,10],
     ),
     ),
 ]
