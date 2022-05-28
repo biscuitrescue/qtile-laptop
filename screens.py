@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme="catppuccin"
+theme = "palenight"
 
 colours =  {
     "everblush":[
@@ -68,7 +68,7 @@ decor = {
             use_widget_background=True,
             radius=11,
             filled=True,
-            padding_y=7,
+            padding_y=8,
         )
     ],
     "padding": 10,
@@ -79,7 +79,7 @@ decor1 = {
             use_widget_background=True,
             radius=[11,0,0,11],
             filled=True,
-            padding_y=7,
+            padding_y=8,
         )
     ],
     "padding": 10,
@@ -90,7 +90,7 @@ decor2 = {
             use_widget_background=True,
             radius=[0,11,11,0],
             filled=True,
-            padding_y=7,
+            padding_y=8,
         )
     ],
     "padding": 10,
@@ -110,14 +110,14 @@ default=[
         padding_x=2,
         borderwidth=8,
         inactive=colours[theme][7],
-        active=colours[theme][5],
+        active=colours[theme][3],
         rounded=True,
         invert_mouse_wheel=True,
         urgent_alert_method="text",
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][3],
+        this_current_screen_border=colours[theme][2],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -247,11 +247,11 @@ else:
         [
             widget.UPowerWidget(
                 font=xf,
-                battery_width=24,
-                battery_height=11,
+                battery_width=23,
+                battery_height=10,
                 fontsize=xx,
                 percentage_low=0.35,
-                percentage_critical=0.2,
+                percentage_critical=0.25,
                 fill_critical="#ff0000",
                 fill_low=colours[theme][4],
                 fill_normal=colours[theme][1],
@@ -268,7 +268,7 @@ else:
             widget.Battery(
                 fontsize=xx,
                 font=xf,
-                low_percentage=0.2,
+                low_percentage=0.25,
                 low_background=colours[theme][7],
                 low_foreground=colours[theme][1],
                 foreground=colours[theme][1],
@@ -294,7 +294,7 @@ screens = [
         44,
         background=colours[theme][1],
         foreground=colours[theme][1],
-        opacity=0.95,
+        # opacity=0.90,
         margin=[8,10,2,10],
     ),
     ),
