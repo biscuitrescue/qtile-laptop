@@ -1,5 +1,5 @@
 import os
-from libqtile.config import Screen 
+from libqtile.config import Screen
 from libqtile import layout, bar, widget, hook
 from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
@@ -7,22 +7,22 @@ from qtile_extras.bar import Bar
 
 colours =  [
     ["#D8DEE9"],      # Colour 0
-    ["#1e1e2e"],        # Colour 1
-    ["#f28fad"],        # Colour 2
-    ["#abe9b3"],        # Colour 3
-    ["#fae3b0"],        # Colour 4
-    ["#d6acff"],        # Colour 5
+    ["#181f21"],        # Colour 1
+    ["#ef7d7d"],        # Colour 2
+    ["#9bdead"],        # Colour 3
+    ["#f4d67a"],        # Colour 4
+    ["#C9CBFF"],        # Colour 5
     ["#f5c2e7"],        # Colour 6
-    ["#89DCEB"],        # Colour 7
-    ["#C9CBFF"],        # Colour 8
-    ["#b5e8e0"],        # Colour 9
-    ["#F2779C"]]        # Colour 10
+    ["#8ccf7e"],        # Colour 7
+    ["#d6acff"],        # Colour 8
+    ["#6da4cd"],        # Colour 9
+    ["#e06e6e"]]        # Colour 10
 
 decor = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=12,
+            radius=11,
             filled=True,
             padding_y=7,
         )
@@ -42,12 +42,12 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[8],
-        active=colours[3],
+        inactive=colours[9],
+        active=colours[5],
         rounded=True,
         highlight_color=colours[4],
         highlight_method="text",
-        this_current_screen_border=colours[10],
+        this_current_screen_border=colours[3],
         block_highlight_text_color=colours[1],
     ),
     widget.Sep(
@@ -205,7 +205,7 @@ screens = [
         background=colours[1],
         foreground=colours[1],
         opacity=0.95,
-        margin=[8,30,12,30],
+        margin=[8,30,2,30],
     ),
     ),
 ]
