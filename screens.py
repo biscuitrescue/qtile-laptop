@@ -5,18 +5,62 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-colours =  [
-    ["#D8DEE9"],      # Colour 0
-    ["#181f21"],        # Colour 1
-    ["#ef7d7d"],        # Colour 2
-    ["#9bdead"],        # Colour 3
-    ["#f4d67a"],        # Colour 4
-    ["#C9CBFF"],        # Colour 5
-    ["#f5c2e7"],        # Colour 6
-    ["#8ccf7e"],        # Colour 7
-    ["#d6acff"],        # Colour 8
-    ["#6da4cd"],        # Colour 9
-    ["#e06e6e"]]        # Colour 10
+theme="catppuccin"
+
+colours =  {
+    "everblush":[
+        ["#D8DEE9"],      # Colour 0
+        ["#181f21"],        # Colour 1
+        ["#ef7d7d"],        # Colour 2
+        ["#9bdead"],        # Colour 3
+        ["#f4d67a"],        # Colour 4
+        ["#C9CBFF"],        # Colour 5
+        ["#f5c2e7"],        # Colour 6
+        ["#8ccf7e"],        # Colour 7
+        ["#d6acff"],        # Colour 8
+        ["#6da4cd"],        # Colour 9
+        ["#e06e6e"]        # Colour 10
+    ],
+    "palenight":[
+        ["#D8DEE9"],      # Colour 0
+        ["#282d3e"],        # Colour 1
+        ["#ff8b92"],        # Colour 2
+        ["#c3e88d"],        # Colour 3
+        ["#ffe585"],        # Colour 4
+        ["#c792ea"],        # Colour 5
+        ["#f5c2e7"],        # Colour 6
+        ["#82aaff"],        # Colour 7
+        ["#F2779C"],        # Colour 8
+        ["#81A1C1"],        # Colour 9
+        ["#ff6e6e"]        # Colour 10
+    ],
+    "catppuccin":[
+        ["#D8DEE9"],      # Colour 0
+        ["#1e1e2e"],        # Colour 1
+        ["#f28fad"],        # Colour 2
+        ["#abe9b3"],        # Colour 3
+        ["#fae3b0"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#f5c2e7"],        # Colour 6
+        ["#89DCEB"],        # Colour 7
+        ["#C9CBFF"],        # Colour 8
+        ["#b5e8e0"],        # Colour 9
+        ["#F2779C"]         # Colour 10
+    ],
+    "dracula":[
+        ["#D8DEE9"],        # Colour 0
+        ["#282a36"],        # Colour 1
+        ["#F2779C"],        # Colour 2
+        ["#50fa7b"],        # Colour 3
+        ["#f1fa8c"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#ff79c6"],        # Colour 6
+        ["#8be9fd"],        # Colour 7
+        ["#ff6e6e"],        # Colour 8
+        ["#a4ffff"],        # Colour 9
+        ["#ff5555"]         # Colour 10
+    ],
+}
 
 decor = {
     "decorations": [
@@ -30,28 +74,29 @@ decor = {
     "padding": 10,
 }
 
+
 xx=17
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
         font="ubuntumono nerd font bold",
         fontsize=25,
-        background=colours[1],
+        background=colours[theme][1],
         margin_y=4,
         margin_x=5,
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[9],
-        active=colours[5],
+        inactive=colours[theme][9],
+        active=colours[theme][5],
         rounded=True,
         invert_mouse_wheel=True,
         urgent_alert_method="text",
-        urgent_text=colours[10],
-        highlight_color=colours[4],
+        urgent_text=colours[theme][10],
+        highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[3],
-        block_highlight_text_color=colours[1],
+        this_current_screen_border=colours[theme][3],
+        block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
         padding=2,
@@ -60,7 +105,7 @@ default=[
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.45,
-        background=colours[1],
+        background=colours[theme][1],
     ),
 
     widget.Spacer(),
@@ -70,35 +115,35 @@ default=[
         padding=4,
     ),
     widget.TextBox(
-        foreground=colours[9],
+        foreground=colours[theme][9],
         text="|",
         font=xf,
     ),
     widget.CPU(
-        background=colours[9],
-        foreground=colours[1],
+        background=colours[theme][9],
+        foreground=colours[theme][1],
         format='  {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[4],
+        foreground=colours[theme][4],
         text="|",
         font=xf,
     ),
     widget.Memory(
         font=xf,
         fontsize=xx,
-        background=colours[4],
-        foreground=colours[1],
+        background=colours[theme][4],
+        foreground=colours[theme][1],
         measure_mem='G',
         measure_swap='G',
         format='  {MemUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[6],
+        foreground=colours[theme][6],
         text="|",
         font=xf,
     ),
@@ -106,54 +151,54 @@ default=[
         measure_mem='G',
         font=xf,
         fontsize=xx,
-        foreground=colours[1],
-        background=colours[6],
+        foreground=colours[theme][1],
+        background=colours[theme][6],
         measure_swap='G',
         format=' {SwapUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[3],
+        foreground=colours[theme][3],
         text="|",
         font=xf,
     ),
     widget.Volume(
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
-        background=colours[3],
-        foreground=colours[1],
+        background=colours[theme][3],
+        foreground=colours[theme][1],
         update_interval=0.001,
         font=xf,
         fontsize=xx,
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[8],
+        foreground=colours[theme][8],
         text="|",
         font=xf,
     ),
     widget.Clock(
-        foreground=colours[1],
-        background=colours[8],
+        foreground=colours[theme][1],
+        background=colours[theme][8],
         format='  %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[5],
+        foreground=colours[theme][5],
         text="|",
         font=xf,
     ),
     widget.Clock(
-        foreground=colours[1],
-        background=colours[5],
+        foreground=colours[theme][1],
+        background=colours[theme][5],
         font=xf,
         fontsize=xx,
         format='  %I:%M %p',
         **decor,
     ),
     widget.TextBox(
-        foreground=colours[7],
+        foreground=colours[theme][7],
         text="|",
         font=xf,
     ),
@@ -164,12 +209,12 @@ if len(os.listdir("/sys/class/power_supply"))==0:
             widget.CapsNumLockIndicator(
                 fontsize=xx,
                 font=xf,
-                foreground=colours[1],
-                background=colours[7],
+                foreground=colours[theme][1],
+                background=colours[theme][7],
                 **decor,
             ),
             widget.TextBox(
-                foreground=colours[7],
+                foreground=colours[theme][7],
                 text="|",
                 font=xf,
             ),
@@ -196,18 +241,18 @@ else:
                 fontsize=xx,
                 font=xf,
                 low_percentage=0.3,
-                low_background=colours[10],
-                low_foreground=colours[1],
+                low_background=colours[theme][10],
+                low_foreground=colours[theme][1],
                 update_interval=1,
                 charge_char='',
                 discharge_char=' ',
-                background=colours[7],
+                background=colours[theme][7],
                 format='{char}  {percent:2.0%}',
-                foreground=colours[1],
+                foreground=colours[theme][1],
                 **decor,
             ),
             widget.TextBox(
-                foreground=colours[7],
+                foreground=colours[theme][7],
                 text="|",
                 font=xf,
             ),
@@ -219,8 +264,8 @@ screens = [
     top=bar.Bar(
         default,
         44,
-        background=colours[1],
-        foreground=colours[1],
+        background=colours[theme][1],
+        foreground=colours[theme][1],
         opacity=0.95,
         margin=[8,10,2,10],
     ),
