@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme="everblush"
+theme="catppuccin"
 
 colours =  {
     "everblush":[
@@ -273,7 +273,7 @@ else:
                 low_foreground=colours[theme][1],
                 foreground=colours[theme][1],
                 background=colours[theme][7],
-                charge_char='↑ ',
+                charge_char='↑',
                 discharge_char='',
                 update_interval=1,
                 format='{percent:2.0%}{char}',
