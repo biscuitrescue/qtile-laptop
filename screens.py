@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "palenight"
+theme = "dracula"
 
 colours =  {
     "everblush":[
@@ -51,11 +51,11 @@ colours =  {
         ["#D8DEE9"],        # Colour 0
         ["#282a36"],        # Colour 1
         ["#F2779C"],        # Colour 2
-        ["#50fa7b"],        # Colour 3
+        ["#8be9fd"],        # Colour 3
         ["#f1fa8c"],        # Colour 4
         ["#d6acff"],        # Colour 5
         ["#ff79c6"],        # Colour 6
-        ["#8be9fd"],        # Colour 7
+        ["#50fa7b"],        # Colour 7
         ["#ff6e6e"],        # Colour 8
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
@@ -109,15 +109,15 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][7],
-        active=colours[theme][3],
+        inactive=colours[theme][9],
+        active=colours[theme][6],
         rounded=True,
         invert_mouse_wheel=True,
         urgent_alert_method="text",
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][2],
+        this_current_screen_border=colours[theme][4],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -250,8 +250,8 @@ else:
                 battery_width=23,
                 battery_height=10,
                 fontsize=xx,
-                percentage_low=0.35,
-                percentage_critical=0.25,
+                percentage_low=0.5,
+                percentage_critical=0.3,
                 fill_critical="#ff0000",
                 fill_low=colours[theme][4],
                 fill_normal=colours[theme][1],
