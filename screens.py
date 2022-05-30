@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "dracula"
+theme = "macchiato"
 
 colours =  {
     "everblush":[
@@ -34,7 +34,7 @@ colours =  {
         ["#81A1C1"],        # Colour 9
         ["#ff6e6e"]        # Colour 10
     ],
-    "catppuccin":[
+    "mocha":[
         ["#D8DEE9"],      # Colour 0
         ["#1e1e2e"],        # Colour 1
         ["#f28fad"],        # Colour 2
@@ -59,6 +59,32 @@ colours =  {
         ["#ff6e6e"],        # Colour 8
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
+    ],
+    "macchiato":[
+        ["#D8DEE9"],      # Colour 0
+        ["#24273a"],        # Colour 1
+        ["#f28fad"],        # Colour 2
+        ["#a6da95"],        # Colour 3
+        ["#eed49f"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#F5BDE6"],        # Colour 6
+        ["#8BD5CA"],        # Colour 7
+        ["#C9CBFF"],        # Colour 8
+        ["#b5e8e0"],        # Colour 9
+        ["#ed8796"]         # Colour 10
+    ],
+    "frappe":[
+        ["#D8DEE9"],      # Colour 0
+        ["#303446"],        # Colour 1
+        ["#EA999C"],        # Colour 2
+        ["#A6D189"],        # Colour 3
+        ["#E5C890"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#F4B8E4"],        # Colour 6
+        ["#8CAAEE"],        # Colour 7
+        ["#C9CBFF"],        # Colour 8
+        ["#b5e8e0"],        # Colour 9
+        ["#E78284"]         # Colour 10
     ],
 }
 
@@ -109,15 +135,15 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][9],
-        active=colours[theme][6],
+        inactive=colours[theme][8],
+        active=colours[theme][4],
         rounded=True,
         invert_mouse_wheel=True,
         urgent_alert_method="text",
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][4],
+        this_current_screen_border=colours[theme][3],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -294,7 +320,7 @@ screens = [
         44,
         background=colours[theme][1],
         foreground=colours[theme][1],
-        # opacity=0.90,
+        opacity=0.95,
         margin=[8,10,2,10],
     ),
     ),
