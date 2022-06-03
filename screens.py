@@ -105,7 +105,7 @@ decor1 = {
             use_widget_background=True,
             radius=[11,0,0,11],
             filled=True,
-            padding_y=8,
+            padding_y=7,
         )
     ],
     "padding": 10,
@@ -116,14 +116,14 @@ decor2 = {
             use_widget_background=True,
             radius=[0,11,11,0],
             filled=True,
-            padding_y=8,
+            padding_y=7,
         )
     ],
     "padding": 10,
 }
 
 
-xx=16
+xx=17
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
