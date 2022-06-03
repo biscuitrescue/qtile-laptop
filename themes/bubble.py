@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme="catppuccin"
+theme = "macchiato"
 
 colours =  {
     "everblush":[
@@ -16,9 +16,9 @@ colours =  {
         ["#f4d67a"],        # Colour 4
         ["#C9CBFF"],        # Colour 5
         ["#f5c2e7"],        # Colour 6
-        ["#8ccf7e"],        # Colour 7
+        ["#6da4cd"],        # Colour 7
         ["#d6acff"],        # Colour 8
-        ["#6da4cd"],        # Colour 9
+        ["#8ccf7e"],        # Colour 9
         ["#e06e6e"]        # Colour 10
     ],
     "palenight":[
@@ -34,7 +34,7 @@ colours =  {
         ["#81A1C1"],        # Colour 9
         ["#ff6e6e"]        # Colour 10
     ],
-    "catppuccin":[
+    "mocha":[
         ["#D8DEE9"],      # Colour 0
         ["#1e1e2e"],        # Colour 1
         ["#f28fad"],        # Colour 2
@@ -51,14 +51,40 @@ colours =  {
         ["#D8DEE9"],        # Colour 0
         ["#282a36"],        # Colour 1
         ["#F2779C"],        # Colour 2
-        ["#50fa7b"],        # Colour 3
+        ["#8be9fd"],        # Colour 3
         ["#f1fa8c"],        # Colour 4
         ["#d6acff"],        # Colour 5
         ["#ff79c6"],        # Colour 6
-        ["#8be9fd"],        # Colour 7
+        ["#50fa7b"],        # Colour 7
         ["#ff6e6e"],        # Colour 8
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
+    ],
+    "macchiato":[
+        ["#D8DEE9"],      # Colour 0
+        ["#24273a"],        # Colour 1
+        ["#f28fad"],        # Colour 2
+        ["#a6da95"],        # Colour 3
+        ["#eed49f"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#F5BDE6"],        # Colour 6
+        ["#8BD5CA"],        # Colour 7
+        ["#C9CBFF"],        # Colour 8
+        ["#b5e8e0"],        # Colour 9
+        ["#ed8796"]         # Colour 10
+    ],
+    "frappe":[
+        ["#D8DEE9"],      # Colour 0
+        ["#303446"],        # Colour 1
+        ["#EA999C"],        # Colour 2
+        ["#A6D189"],        # Colour 3
+        ["#E5C890"],        # Colour 4
+        ["#d6acff"],        # Colour 5
+        ["#F4B8E4"],        # Colour 6
+        ["#8CAAEE"],        # Colour 7
+        ["#C9CBFF"],        # Colour 8
+        ["#b5e8e0"],        # Colour 9
+        ["#E78284"]         # Colour 10
     ],
 }
 
@@ -68,7 +94,29 @@ decor = {
             use_widget_background=True,
             radius=11,
             filled=True,
-            padding_y=7,
+            padding_y=8,
+        )
+    ],
+    "padding": 10,
+}
+decor1 = {
+    "decorations": [
+        RectDecoration(
+            use_widget_background=True,
+            radius=[11,0,0,11],
+            filled=True,
+            padding_y=8,
+        )
+    ],
+    "padding": 10,
+}
+decor2 = {
+    "decorations": [
+        RectDecoration(
+            use_widget_background=True,
+            radius=[0,11,11,0],
+            filled=True,
+            padding_y=8,
         )
     ],
     "padding": 10,
@@ -87,15 +135,15 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][9],
-        active=colours[theme][5],
+        inactive=colours[theme][8],
+        active=colours[theme][4],
         rounded=True,
-        invert_mouse_wheel=True,
+        # invert_mouse_wheel=True,
         urgent_alert_method="text",
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][3],
+        this_current_screen_border=colours[theme][2],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -223,33 +271,39 @@ if len(os.listdir("/sys/class/power_supply"))==0:
 else:
     default.extend(
         [
-            # widget.UPowerWidget(
-            #     font=xf,
-            #     battery_width=28,
-            #     battery_height=14,
-            #     fontsize=xx,
-            #     background=colours[1],
-            #     border_charge_colour=colours[7],
-            #     margin=10,
-            # ),
-            # widget.TextBox(
-            #     foreground=colours[7],
-            #     text="|",
-            #     font=xf,
-            # ),
+            widget.UPowerWidget(
+                font=xf,
+                battery_width=23,
+                battery_height=10,
+                fontsize=xx,
+                percentage_low=0.5,
+                percentage_critical=0.3,
+                fill_critical="#ff0000",
+                fill_low=colours[theme][4],
+                fill_normal=colours[theme][1],
+                background=colours[theme][7],
+                border_colour=colours[theme][1],
+                border_critical_colour=colours[theme][1],
+                border_charge_colour=colours[theme][1],
+                text_charging="",
+                text_discharging="",
+                text_displaytime="",
+                margin=6,
+                **decor1,
+            ),
             widget.Battery(
                 fontsize=xx,
                 font=xf,
-                low_percentage=0.3,
-                low_background=colours[theme][10],
+                low_percentage=0.25,
+                low_background=colours[theme][7],
                 low_foreground=colours[theme][1],
-                update_interval=1,
-                charge_char='',
-                discharge_char=' ',
-                background=colours[theme][7],
-                format='{char}  {percent:2.0%}',
                 foreground=colours[theme][1],
-                **decor,
+                background=colours[theme][7],
+                charge_char='↑',
+                discharge_char='',
+                update_interval=1,
+                format='{percent:2.0%}{char}',
+                **decor2,
             ),
             widget.TextBox(
                 foreground=colours[theme][7],
@@ -266,7 +320,7 @@ screens = [
         44,
         background=colours[theme][1],
         foreground=colours[theme][1],
-        opacity=0.95,
+        # opacity=0.9,
         margin=[8,10,2,10],
     ),
     ),

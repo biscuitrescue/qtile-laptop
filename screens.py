@@ -94,7 +94,7 @@ decor = {
             use_widget_background=True,
             radius=11,
             filled=True,
-            padding_y=8,
+            padding_y=7,
         )
     ],
     "padding": 10,
@@ -123,7 +123,7 @@ decor2 = {
 }
 
 
-xx=17
+xx=16
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
@@ -317,7 +317,7 @@ screens = [
     Screen(
     top=bar.Bar(
         default,
-        44,
+        40,
         background=colours[theme][1],
         foreground=colours[theme][1],
         # opacity=0.9,
