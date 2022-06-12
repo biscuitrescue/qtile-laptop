@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "palenight"
+theme = "mocha"
 
 colours =  {
     "everblush":[
@@ -135,7 +135,7 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][5],
+        inactive=colours[theme][8],
         active=colours[theme][2],
         rounded=True,
         # invert_mouse_wheel=True,
@@ -143,7 +143,7 @@ default=[
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][3],
+        this_current_screen_border=colours[theme][4],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -320,7 +320,6 @@ screens = [
         40,
         background=colours[theme][1],
         foreground=colours[theme][1],
-        # opacity=0.9,
         margin=[4,10,4,10],
     ),
     ),
