@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "mocha"
+theme = "palenight"
 
 colours =  {
     "everblush":[
@@ -123,27 +123,25 @@ decor2 = {
 }
 
 
-xx=17
-xf="ubuntumono nerd font bold"
+xx=15
+xf="jetbrainsmono nerd font bold"
 default=[
     widget.GroupBox(
-        font="ubuntumono nerd font bold",
-        fontsize=25,
+        fontsize=17,
         background=colours[theme][1],
         margin_y=4,
         margin_x=5,
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][8],
+        inactive=colours[theme][7],
         active=colours[theme][2],
         rounded=True,
-        # invert_mouse_wheel=True,
         urgent_alert_method="text",
         urgent_text=colours[theme][10],
         highlight_color=colours[theme][4],
         highlight_method="text",
-        this_current_screen_border=colours[theme][4],
+        this_current_screen_border=colours[theme][3],
         block_highlight_text_color=colours[theme][1],
     ),
     widget.Sep(
@@ -187,7 +185,7 @@ default=[
         foreground=colours[theme][1],
         measure_mem='G',
         measure_swap='G',
-        format='  {MemUsed: .2f} GB',
+        format=' {MemUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
@@ -202,7 +200,7 @@ default=[
         foreground=colours[theme][1],
         background=colours[theme][6],
         measure_swap='G',
-        format=' {SwapUsed: .2f} GB',
+        format='{SwapUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(

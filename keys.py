@@ -129,10 +129,10 @@ keys = [
             ]),
     # DMSCRIPTS
     KeyChord([mod], "x", [
-        Key([], "c", lazy.spawn("bash /home/mr_robot/dmscripts/dmconf")),
-        Key([], "p", lazy.spawn("bash /home/mr_robot/dmscripts/dmpy")),
-        Key([], "f", lazy.spawn("bash /home/mr_robot/dmscripts/dmfeh")),
-        Key([], "b", lazy.spawn("bash /home/mr_robot/dmscripts/pylaunch")),
+        Key([], "c", lazy.spawn("bash /home/cafo/dmscripts/dmconf")),
+        Key([], "p", lazy.spawn("bash /home/cafo/dmscripts/dmpy")),
+        Key([], "f", lazy.spawn("bash /home/cafo/dmscripts/dmfeh")),
+        Key([], "b", lazy.spawn("bash /home/cafo/dmscripts/pylaunch")),
             ]),
 
     # REDSHIFT

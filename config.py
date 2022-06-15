@@ -6,7 +6,7 @@ from groups import groups
 from screens import screens
 
 border = dict(
-    border_focus="#8AADF4",
+    border_focus="#86aaff",
     border_normal="#4c566a",
     border_width=2,
 )
