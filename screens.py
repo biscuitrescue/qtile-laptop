@@ -318,7 +318,7 @@ screens = [
             40,
             background=colours[theme][1],
             foreground=colours[theme][1],
-            margin=[4, 10, 4, 10],
+            margin=[4, 10, 2, 10],
         ),
     ),
 ]
