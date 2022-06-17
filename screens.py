@@ -5,10 +5,10 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "palenight"
+theme = "mocha"
 
-colours =  {
-    "everblush":[
+colours = {
+    "everblush": [
         ["#D8DEE9"],      # Colour 0
         ["#181f21"],        # Colour 1
         ["#ef7d7d"],        # Colour 2
@@ -21,7 +21,7 @@ colours =  {
         ["#8ccf7e"],        # Colour 9
         ["#e06e6e"]        # Colour 10
     ],
-    "palenight":[
+    "palenight": [
         ["#D8DEE9"],      # Colour 0
         ["#282d3e"],        # Colour 1
         ["#ff8b92"],        # Colour 2
@@ -34,7 +34,7 @@ colours =  {
         ["#81A1C1"],        # Colour 9
         ["#ff6e6e"]        # Colour 10
     ],
-    "mocha":[
+    "mocha": [
         ["#D8DEE9"],      # Colour 0
         ["#1e1e2e"],        # Colour 1
         ["#f28fad"],        # Colour 2
@@ -47,7 +47,7 @@ colours =  {
         ["#b5e8e0"],        # Colour 9
         ["#F2779C"]         # Colour 10
     ],
-    "dracula":[
+    "dracula": [
         ["#D8DEE9"],        # Colour 0
         ["#282a36"],        # Colour 1
         ["#F2779C"],        # Colour 2
@@ -60,7 +60,7 @@ colours =  {
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
     ],
-    "macchiato":[
+    "macchiato": [
         ["#D8DEE9"],      # Colour 0
         ["#24273a"],        # Colour 1
         ["#f28fad"],        # Colour 2
@@ -73,7 +73,7 @@ colours =  {
         ["#b5e8e0"],        # Colour 9
         ["#ed8796"]         # Colour 10
     ],
-    "frappe":[
+    "frappe": [
         ["#D8DEE9"],      # Colour 0
         ["#303446"],        # Colour 1
         ["#EA999C"],        # Colour 2
@@ -103,7 +103,7 @@ decor1 = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=[11,0,0,11],
+            radius=[11, 0, 0, 11],
             filled=True,
             padding_y=7,
         )
@@ -114,7 +114,7 @@ decor2 = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=[0,11,11,0],
+            radius=[0, 11, 11, 0],
             filled=True,
             padding_y=7,
         )
@@ -123,9 +123,9 @@ decor2 = {
 }
 
 
-xx=15
-xf="jetbrainsmono nerd font bold"
-default=[
+xx = 15
+xf = "jetbrainsmono nerd font bold"
+default = [
     widget.GroupBox(
         fontsize=17,
         background=colours[theme][1],
@@ -134,7 +134,7 @@ default=[
         padding_y=3,
         padding_x=2,
         borderwidth=8,
-        inactive=colours[theme][7],
+        inactive=colours[theme][8],
         active=colours[theme][2],
         rounded=True,
         urgent_alert_method="text",
@@ -249,7 +249,7 @@ default=[
         font=xf,
     ),
 ]
-if len(os.listdir("/sys/class/power_supply"))==0:
+if len(os.listdir("/sys/class/power_supply")) == 0:
     default.extend(
         [
             widget.CapsNumLockIndicator(
@@ -313,12 +313,12 @@ else:
 
 screens = [
     Screen(
-    top=bar.Bar(
-        default,
-        40,
-        background=colours[theme][1],
-        foreground=colours[theme][1],
-        margin=[4,10,4,10],
-    ),
+        top=bar.Bar(
+            default,
+            40,
+            background=colours[theme][1],
+            foreground=colours[theme][1],
+            margin=[4, 10, 4, 10],
+        ),
     ),
 ]
