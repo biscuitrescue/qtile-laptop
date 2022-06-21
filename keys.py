@@ -40,6 +40,7 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 5")),
 
+    Key(["control"], "XF86AudioPlay", lazy.spawn("playerctl -p spotify play-pause")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
@@ -79,6 +80,14 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.grow_left()),
     Key([mod, "shift"], "m", lazy.layout.grow_right()),
     Key([mod, "shift"], "n", lazy.layout.normalize()),
+    Key([mod, "shift"], "h",
+        lazy.layout.move_left(),
+        desc='Move up a section in treetab'
+        ),
+    Key([mod, "shift"], "l",
+        lazy.layout.move_right(),
+        desc='Move down a section in treetab'
+        ),
     Key([mod], "Tab", lazy.layout.next()),
 
     Key([mod], "b", lazy.hide_show_bar()),
@@ -86,7 +95,8 @@ keys = [
     Key([mod], "a", lazy.prev_layout()),
     Key([mod], "q", lazy.window.kill()),
     Key([mod, "shift"], "q", lazy.shutdown()),
-    Key([mod], "c", lazy.restart()),
+    Key([mod, "control"], "r", lazy.restart()),
+    Key([mod], "c", lazy.reload_config()),
     Key([mod, "shift"], "x", lazy.spawn("poweroff")),
 
     Key(["shift"], "Print", lazy.spawn("clip")),
@@ -97,7 +107,7 @@ keys = [
 
     # APPLICATIONS
 
-    Key([mod], "space", lazy.spawn(Term2)),
+    # Key([mod], "space", lazy.spawn(Term2)),
     Key([mod, "shift"], "a", lazy.spawn("i3lock -c 000000")),
     Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
     Key([mod], "KP_Add", lazy.spawn("i3lock -c 000000")),

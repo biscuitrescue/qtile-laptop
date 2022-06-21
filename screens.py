@@ -123,7 +123,7 @@ decor2 = {
 }
 
 
-xx = 15
+xx = 16
 xf = "jetbrainsmono nerd font bold"
 default = [
     widget.GroupBox(

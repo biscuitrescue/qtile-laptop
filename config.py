@@ -23,9 +23,25 @@ layouts = [
         shift_windows=True,
         **border
     ),
-    layout.Zoomy(
-        columnwidth=350,
-        margin=8,
+    layout.TreeTab(
+        font = "jetbrainsmono nerd font mono",
+        fontsize = 15,
+        sections = ["Qtile"],
+        section_fontsize = 16,
+        border_width = 3,
+        bg_color = "1e1e2e",
+        active_bg = "c678dd",
+        active_fg = "000000",
+        inactive_bg = "a9a1e1",
+        inactive_fg = "1c1f24",
+        padding_left = 10,
+        padding_x = 0,
+        padding_y = 8,
+        section_top = 20,
+        section_bottom = 20,
+        level_shift = 8,
+        vspace = 5,
+        panel_width = 240
     ),
     layout.Max(),
 
@@ -46,7 +62,7 @@ floating_layout = layout.Floating(
         Match(wm_class='maketag'),  # gitk
         Match(wm_class='ssh-askpass'),  # ssh-askpass
         Match(wm_class='Tk'),  # ssh-askpass
-        # Match(wm_class=endswith(".py")),
+        Match(wm_class='Todogtk.py'),
         Match(wm_class='Signal Beta'),  # ssh-askpass
         Match(title='branchdialog'),  # gitk
         Match(title='pinentry'),  # GPG key password entry

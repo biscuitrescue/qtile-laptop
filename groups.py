@@ -22,7 +22,7 @@ groups = [
           ),
 
 
-    Group("3", label="", layout="zoomy",
+    Group("3", label="", layout="treetab",
         matches=[
             Match(wm_class=["Zathura"]),
             Match(wm_class=["Evince"]),
@@ -84,7 +84,7 @@ groups = [
 for i in groups:
     keys.extend([
         Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
+            desc = "Switch to group {}".format(i.name)),
         Key([mod, "shift"], i.name,
             lazy.window.togroup(i.name, switch_group=False),
             desc="Switch to & move focused window to group {}".format(i.name)),
@@ -103,7 +103,10 @@ groups.append(ScratchPad('Scratchpad', [
              # x=0.1, y=0, opacity=1),
              width=0.75, height=0.9,
              x=0.125, y=0.05, opacity=1),
-    DropDown("editor", "kitty -e nvim",
+    DropDown("vim", "kitty -e nvim",
+             width=0.9, height=0.9,
+             x=0.05, y=0.05, opacity=1),
+    DropDown("editor", "emacs",
              # width=0.9, height=0.85,
              # x=0.05, y=0.15, opacity=1),
              width=0.9, height=0.9,
@@ -128,6 +131,8 @@ groups.append(ScratchPad('Scratchpad', [
 ]))
 
 keys.extend([
+    Key([mod], "space",
+        lazy.group['Scratchpad'].dropdown_toggle('vim')),
     Key([mod, 'shift'], "v",
         lazy.group['Scratchpad'].dropdown_toggle('sig')),
     Key([mod], "p",
