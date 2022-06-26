@@ -18,6 +18,8 @@ groups = [
             Match(wm_class=["Icecat"]),
             Match(wm_class=["LibreWolf"]),
             Match(wm_class=["Brave-browser"]),
+            Match(wm_class=["Firefox"]),
+            Match(wm_class=["firefox"]),
         ]
           ),
 
@@ -39,8 +41,6 @@ groups = [
 
     Group("5", label="",
         matches=[
-            Match(wm_class=["Firefox"]),
-            Match(wm_class=["firefox"]),
             Match(wm_class=["Mplayer"]),
         ]
           ),
