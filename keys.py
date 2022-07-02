@@ -109,14 +109,14 @@ keys = [
     # APPLICATIONS
 
     # Key([mod], "space", lazy.spawn(Term2)),
-    Key([mod, "shift"], "a", lazy.spawn("i3lock -c 000000")),
+    Key([mod, "shift"], "a", lazy.spawn("./.lock.sh")),
     Key([mod], "KP_Subtract", lazy.spawn("i3lock -c 00000000")),
     Key([mod], "KP_Add", lazy.spawn("i3lock -c 000000")),
     Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod], "KP_Enter", lazy.spawn(myTerm)),
     Key([mod], "v", lazy.spawn("pavucontrol")),
     Key([], "F9", lazy.spawn("pavucontrol")),
-    Key([mod, "shift"], 'd', lazy.spawn('dunstop')),
+    Key([mod, "control"], 'd', lazy.spawn('dunstop')),
 
     KeyChord([mod], "i", [
         Key([], "f", lazy.spawn("firefox")),

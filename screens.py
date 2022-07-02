@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "mocha"
+theme = "palenight"
 
 colours = {
     "everblush": [
@@ -30,8 +30,8 @@ colours = {
         ["#c792ea"],        # Colour 5
         ["#f5c2e7"],        # Colour 6
         ["#82aaff"],        # Colour 7
-        ["#F2779C"],        # Colour 8
-        ["#81A1C1"],        # Colour 9
+        ["#81A1C1"],        # Colour 8
+        ["#F2779C"],        # Colour 9
         ["#ff6e6e"]        # Colour 10
     ],
     "mocha": [
@@ -51,12 +51,12 @@ colours = {
         ["#D8DEE9"],        # Colour 0
         ["#282a36"],        # Colour 1
         ["#F2779C"],        # Colour 2
-        ["#8be9fd"],        # Colour 3
-        ["#f1fa8c"],        # Colour 4
-        ["#d6acff"],        # Colour 5
+        ["#50fa7b"],        # Colour 3
+        ["#ff6e6e"],        # Colour 4
+        ["#f1fa8c"],        # Colour 5
         ["#ff79c6"],        # Colour 6
-        ["#50fa7b"],        # Colour 7
-        ["#ff6e6e"],        # Colour 8
+        ["#8be9fd"],        # Colour 7
+        ["#d6acff"],        # Colour 8
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
     ],
@@ -73,16 +73,16 @@ colours = {
         ["#b5e8e0"],        # Colour 9
         ["#ed8796"]         # Colour 10
     ],
-    "frappe": [
+    "nord": [
         ["#D8DEE9"],      # Colour 0
-        ["#303446"],        # Colour 1
-        ["#EA999C"],        # Colour 2
-        ["#A6D189"],        # Colour 3
-        ["#E5C890"],        # Colour 4
+        ["#2e3440"],        # Colour 1
+        ["#BF616A"],        # Colour 2
+        ["#A3BE8C"],        # Colour 3
+        ["#88C0D0"],        # Colour 4
         ["#d6acff"],        # Colour 5
-        ["#F4B8E4"],        # Colour 6
-        ["#8CAAEE"],        # Colour 7
-        ["#C9CBFF"],        # Colour 8
+        ["#B48EAD"],        # Colour 6
+        ["#81A1C1"],        # Colour 7
+        ["#EBCB8B"],        # Colour 8
         ["#b5e8e0"],        # Colour 9
         ["#E78284"]         # Colour 10
     ],
@@ -123,11 +123,11 @@ decor2 = {
 }
 
 
-xx = 16
-xf = "jetbrainsmono nerd font bold"
+xx = 20
+xf = "iosevka bold"
 default = [
     widget.GroupBox(
-        fontsize=17,
+        fontsize=xx,
         background=colours[theme][1],
         margin_y=4,
         margin_x=5,
@@ -315,7 +315,7 @@ screens = [
     Screen(
         top=bar.Bar(
             default,
-            40,
+            44,
             background=colours[theme][1],
             foreground=colours[theme][1],
             margin=[4, 10, 2, 10],

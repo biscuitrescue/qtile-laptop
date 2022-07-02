@@ -12,7 +12,7 @@ mod3 = "shift"
 home = os.path.expanduser('~')
 groups = [
     Group("1", label=""),
-    Group("2", label="", spawn="vivaldi-stable",
+    Group("2", label="", spawn="brave",
         matches=[
             Match(wm_class=["Vivaldi-stable"]),
             Match(wm_class=["Icecat"]),
@@ -97,13 +97,13 @@ for i in groups:
 
 groups.append(ScratchPad('Scratchpad', [
     DropDown("sig", "signal-desktop-beta", height=0.6,
-             width=0.5, x=0.25, y=0.2, opacity=1),
+             width=0.6, x=0.2, y=0.12, opacity=1),
     DropDown("term", "kitty",
              # width=0.8, height=0.6,
              # x=0.1, y=0, opacity=1),
              width=0.75, height=0.9,
              x=0.125, y=0.05, opacity=1),
-    DropDown("vim", "kitty -e nvim",
+    DropDown("vim", myTerm+" -e nvim",
              width=0.9, height=0.9,
              x=0.05, y=0.05, opacity=1),
     DropDown("editor", "emacs",
@@ -116,16 +116,16 @@ groups.append(ScratchPad('Scratchpad', [
              x=0.2, y=0.075, opacity=1),
     DropDown("spotify", "spotify", height=0.75, opacity=1,
              width=0.7, x=0.15, y=0.125),
-    DropDown("fm", 'kitty -e ranger',
+    DropDown("fm", myTerm+' -e ranger',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("hitop", 'kitty -e htop',
+    DropDown("hitop", myTerm+' -e htop',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("dc", 'kitty -e gord',
+    DropDown("dc", myTerm+' -e gord',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
-    DropDown("top", 'kitty -e btop',
+    DropDown("top", myTerm+' -e btop',
              width=0.7, height=0.85,
              x=0.15, y=0.075, opacity=1),
 ]))
