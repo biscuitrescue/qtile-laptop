@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "palenight"
+theme = "mocha"
 
 colours = {
     "everblush": [
@@ -123,7 +123,7 @@ decor2 = {
 }
 
 
-xx = 20
+xx = 21
 xf = "iosevka bold"
 default = [
     widget.GroupBox(
