@@ -4,7 +4,8 @@ from typing import List  # noqa: F401
 from keys import keys
 from groups import groups
 from screens import screens
-
+# 96cdfb
+# d6acff
 border = dict(
     border_focus="#96cdfb",
     border_normal="#4c566a",

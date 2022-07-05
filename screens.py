@@ -5,22 +5,9 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "mocha"
+theme = "dracula"
 
 colours = {
-    "everblush": [
-        ["#D8DEE9"],      # Colour 0
-        ["#181f21"],        # Colour 1
-        ["#ef7d7d"],        # Colour 2
-        ["#9bdead"],        # Colour 3
-        ["#f4d67a"],        # Colour 4
-        ["#C9CBFF"],        # Colour 5
-        ["#f5c2e7"],        # Colour 6
-        ["#6da4cd"],        # Colour 7
-        ["#d6acff"],        # Colour 8
-        ["#8ccf7e"],        # Colour 9
-        ["#e06e6e"]        # Colour 10
-    ],
     "palenight": [
         ["#D8DEE9"],      # Colour 0
         ["#282d3e"],        # Colour 1
@@ -123,8 +110,8 @@ decor2 = {
 }
 
 
-xx = 21
-xf = "iosevka bold"
+xx = 22
+xf = "ubuntumono nerd font bold"
 default = [
     widget.GroupBox(
         fontsize=xx,
@@ -185,7 +172,7 @@ default = [
         foreground=colours[theme][1],
         measure_mem='G',
         measure_swap='G',
-        format=' {MemUsed: .2f} GB',
+        format='  {MemUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
@@ -200,7 +187,7 @@ default = [
         foreground=colours[theme][1],
         background=colours[theme][6],
         measure_swap='G',
-        format='{SwapUsed: .2f} GB',
+        format=' {SwapUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
