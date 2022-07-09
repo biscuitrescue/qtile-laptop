@@ -14,7 +14,6 @@ groups = [
     Group("1", label=""),
     Group("2", label="", spawn="brave",
         matches=[
-            Match(wm_class=["Vivaldi-stable"]),
             Match(wm_class=["Icecat"]),
             Match(wm_class=["LibreWolf"]),
             Match(wm_class=["Brave-browser"]),
@@ -76,9 +75,10 @@ groups = [
           ),
 
     Group('f', label='',
-        # matches=[
+        matches=[
+            Match(wm_class=["Vivaldi-stable"]),
         #     Match(wm_class=["Signal Beta"]),
-        # ]
+        ]
           ),
 ]
 for i in groups:
@@ -97,10 +97,10 @@ for i in groups:
 
 groups.append(ScratchPad('Scratchpad', [
     DropDown("sig", "signal-desktop-beta", height=0.6,
-             width=0.6, x=0.2, y=0.12, opacity=1),
+             width=0.65, x=0.175, y=0.12, opacity=1),
     DropDown("term", "kitty",
-             # width=0.8, height=0.6,
-             # x=0.1, y=0, opacity=1),
+             # width=0.9, height=0.6,
+             # x=0.05, y=0, opacity=1),
              width=0.75, height=0.9,
              x=0.125, y=0.05, opacity=1),
     DropDown("vim", myTerm+" -e nvim",
