@@ -138,7 +138,8 @@ decor2 = {
 
 
 xx = 22
-xf = "ubuntumono nerd font bold"
+# xf = "ubuntumono nerd font bold"
+xf = "M Plus 1 Code Semi-Bold"
 default = [
     widget.GroupBox(
         fontsize=xx,
@@ -180,7 +181,7 @@ default = [
     widget.CPU(
         background=colours[theme][9],
         foreground=colours[theme][1],
-        format='  {load_percent}%',
+        format=' {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
@@ -197,7 +198,7 @@ default = [
         foreground=colours[theme][1],
         measure_mem='G',
         measure_swap='G',
-        format='  {MemUsed: .2f} GB',
+        format=' {MemUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
@@ -212,7 +213,7 @@ default = [
         foreground=colours[theme][1],
         background=colours[theme][6],
         measure_swap='G',
-        format=' {SwapUsed: .2f} GB',
+        format='{SwapUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
@@ -237,7 +238,7 @@ default = [
     widget.Clock(
         foreground=colours[theme][1],
         background=colours[theme][8],
-        format='  %d %b, %a',
+        format=' %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
@@ -252,7 +253,7 @@ default = [
         background=colours[theme][5],
         font=xf,
         fontsize=xx,
-        format='  %I:%M %p',
+        format=' %I:%M %p',
         **decor,
     ),
     widget.TextBox(
