@@ -4,7 +4,7 @@
 ***** * Nerd fonts
 ***** * Qtile 21+
 ***** * Qtile-extras
-***** * Picom ( I use jonaburg )
+***** * Picom ( I use jonaburg-fix )
 ***** * Xbacklight ( This is default but you can change in keys.py )
 ***** * Playerctl
 ***** * i3lock-color
@@ -13,8 +13,10 @@
 
 ** Defaults:
 
-*** Reload Config ( More like restart qtile )
+*** Reload Config
 ***** * Mod + C
+*** Restart Qtile
+***** * Mod + Control + R
 
 *** Launchers:
 **** Rofi:
@@ -27,30 +29,30 @@
 
 **** Terminal Emulators:
 ***** Mod + Return
-****** Alacritty
-***** Mod + Space
-****** Urxvt
+****** Kitty
 
 **** Editors:
 ****** Mod + E
-*******      e -> emacs
-*******      v -> vscodium
-*******      n -> neovide
+*******  E     -> emacs
+*******  V     -> vscodium
+*******  N     -> neovide
 
 **** Scratchpads:
-***** Terminal ( Alacritty )
+***** Terminal ( Kitty )
 ****** Mod + P
 ***** Editor ( Emacs )
 ****** Mod + O
+***** Editor ( Kitty -e nvim )
+****** Mod + Space
 ***** File Manager
 ****** Mod + Shift + Space ( Nautilus )
-****** Ctrl + Space ( Ranger -> Alacritty )
+****** Ctrl + Space ( Ranger -> Kitty )
 ***** System Monitor
 ****** Alt + Space ( Btop )
 ****** Alt + Shift + Space ( Htop )
 ***** Chat
 ****** Mod + Shift + V ( Signal )
-****** Mod + Shift + D ( Gord -> Alacritty )
+****** Mod + Shift + D ( Gord -> Kitty )
 
 **** Other Apps:
 ***** Pavucontrol
