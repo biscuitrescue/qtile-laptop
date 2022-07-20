@@ -21,7 +21,7 @@ colours =  [
 
 decor = {
     "decorations": [
-        RectDecoration(use_widget_background=True, radius=14, filled=True, padding_y=0)
+        RectDecoration(use_widget_background=True, radius=10, filled=True, padding_y=0)
     ],
     "padding": 12,
 }
@@ -29,13 +29,13 @@ decor = {
 decor2 = decor.copy()
 decor2["padding"] = 3
 
-xx=16
+xx=22
 xf="ubuntumono nerd font bold"
 default=[
     widget.GroupBox(
         font=xf,
         fontsize=25,
-        background="#1e1e2e99",
+        background="#1e1e2e",
         margin_y=3,
         margin_x=5,
         padding_y=3,
@@ -193,10 +193,9 @@ screens = [
     Screen(
     top=bar.Bar(
         default,
-        35,
+        40,
         background=colours[0],
         foreground=colours[1],
-        opacity=1,
         margin=[10,15,2,15],
     ),
     ),

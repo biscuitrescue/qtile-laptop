@@ -66,6 +66,7 @@ floating_layout = layout.Floating(
         Match(wm_class='Todogtk.py'),
         Match(wm_class='Signal Beta'),  # ssh-askpass
         Match(title='branchdialog'),  # gitk
+        Match(wm_class='Gpower.py'),
         Match(title='pinentry'),  # GPG key password entry
     ])
 

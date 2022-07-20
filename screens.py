@@ -1,9 +1,9 @@
 import os
 from libqtile.config import Screen
 from libqtile import layout, bar, widget, hook
-from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
+from qtile_extras import widget
 
 theme = "mocha"
 
@@ -137,8 +137,7 @@ decor2 = {
 }
 
 
-xx = 22
-# xf = "ubuntumono nerd font bold"
+xx = 21
 xf = "M Plus 1 Code Semi-Bold"
 default = [
     widget.GroupBox(
@@ -163,8 +162,8 @@ default = [
         linewidth=0,
     ),
     widget.CurrentLayoutIcon(
-        custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.45,
+        custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
     ),
 
     widget.Spacer(),
@@ -331,7 +330,8 @@ screens = [
             44,
             background=colours[theme][1],
             foreground=colours[theme][1],
-            margin=[4, 10, 2, 10],
+            # margin=[6, 8, 2, 8],
+            # opacity=0.9
         ),
     ),
 ]

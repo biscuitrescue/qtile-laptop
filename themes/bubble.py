@@ -5,7 +5,7 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 
-theme = "dracula"
+theme = "macchiato"
 
 colours = {
     "palenight": [
@@ -21,44 +21,57 @@ colours = {
         ["#F2779C"],        # Colour 9
         ["#ff6e6e"]        # Colour 10
     ],
+    "frappe": [
+        ["#D8DEE9"],      # Colour 0
+        ["#303446"],        # Colour 1
+        ["#e78284"],        # Colour 2
+        ["#a6d189"],        # Colour 3
+        ["#e5c890"],        # Colour 4
+        ["#ca9ee6"],        # Colour 5
+        ["#eebebe"],        # Colour 6
+        ["#8caaee"],        # Colour 7
+        ["#babbf1"],        # Colour 8
+        ["#81c8be"],        # Colour 9
+        ["#F2779C"]         # Colour 10
+    ],
+    "macchiato": [
+        ["#D8DEE9"],      # Colour 0
+        ["#24273a"],        # Colour 1
+        ["#ed8796"],        # Colour 2
+        ["#a6da95"],        # Colour 3
+        ["#eed49f"],        # Colour 4
+        ["#c6a0f6"],        # Colour 5
+        ["#f0c6c6"],        # Colour 6
+        ["#8aadf4"],        # Colour 7
+        ["#b7bdf8"],        # Colour 8
+        ["#8bd5ca"],        # Colour 9
+        ["#F2779C"]         # Colour 10
+    ],
     "mocha": [
         ["#D8DEE9"],      # Colour 0
         ["#1e1e2e"],        # Colour 1
-        ["#f28fad"],        # Colour 2
-        ["#abe9b3"],        # Colour 3
-        ["#fae3b0"],        # Colour 4
-        ["#d6acff"],        # Colour 5
-        ["#f5c2e7"],        # Colour 6
+        ["#f38baf"],        # Colour 2
+        ["#a6e3a1"],        # Colour 3
+        ["#F9E2AF"],        # Colour 4
+        ["#CBA6F7"],        # Colour 5
+        ["#f2cdcd"],        # Colour 6
         ["#89DCEB"],        # Colour 7
         ["#C9CBFF"],        # Colour 8
-        ["#b5e8e0"],        # Colour 9
+        ["#94E2D5"],        # Colour 9
         ["#F2779C"]         # Colour 10
     ],
     "dracula": [
         ["#D8DEE9"],        # Colour 0
         ["#282a36"],        # Colour 1
-        ["#F2779C"],        # Colour 2
+        ["#ff6e6e"],        # Colour 2
         ["#50fa7b"],        # Colour 3
-        ["#ff6e6e"],        # Colour 4
-        ["#f1fa8c"],        # Colour 5
+        ["#f1fa8c"],        # Colour 4
+        ["#F2779C"],        # Colour 5
         ["#ff79c6"],        # Colour 6
         ["#8be9fd"],        # Colour 7
         ["#d6acff"],        # Colour 8
         ["#a4ffff"],        # Colour 9
         ["#ff5555"]         # Colour 10
-    ],
-    "macchiato": [
-        ["#D8DEE9"],      # Colour 0
-        ["#24273a"],        # Colour 1
-        ["#f28fad"],        # Colour 2
-        ["#a6da95"],        # Colour 3
-        ["#eed49f"],        # Colour 4
-        ["#d6acff"],        # Colour 5
-        ["#F5BDE6"],        # Colour 6
-        ["#8BD5CA"],        # Colour 7
-        ["#C9CBFF"],        # Colour 8
-        ["#b5e8e0"],        # Colour 9
-        ["#ed8796"]         # Colour 10
     ],
     "nord": [
         ["#D8DEE9"],      # Colour 0
@@ -73,13 +86,27 @@ colours = {
         ["#b5e8e0"],        # Colour 9
         ["#E78284"]         # Colour 10
     ],
+    "one": [
+        ["#c8ccd4"],      # Colour 0
+        ["#282c34"],        # Colour 1
+        ["#e06c75"],        # Colour 2
+        ["#98c379"],        # Colour 3
+        ["#e5c07b"],        # Colour 4
+        ["#c678dd"],        # Colour 5
+        ["#f5c2e7"],        # Colour 6
+        ["#56b6c2"],        # Colour 7
+        ["#61afef"],        # Colour 8
+        ["#F2779C"],        # Colour 9
+        ["#ff6e6e"]        # Colour 10
+    ],
 }
 
+rad = 9
 decor = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=11,
+            radius=rad,
             filled=True,
             padding_y=7,
         )
@@ -90,7 +117,7 @@ decor1 = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=[11, 0, 0, 11],
+            radius=[rad, 0, 0, rad],
             filled=True,
             padding_y=7,
         )
@@ -101,7 +128,7 @@ decor2 = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
-            radius=[0, 11, 11, 0],
+            radius=[0, rad, rad, 0],
             filled=True,
             padding_y=7,
         )
@@ -111,11 +138,11 @@ decor2 = {
 
 
 xx = 22
-xf = "ubuntumono nerd font bold"
+# xf = "ubuntumono nerd font bold"
+xf = "M Plus 1 Code Semi-Bold"
 default = [
     widget.GroupBox(
         fontsize=xx,
-        background=colours[theme][1],
         margin_y=4,
         margin_x=5,
         padding_y=3,
@@ -138,7 +165,6 @@ default = [
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
         scale=0.45,
-        background=colours[theme][1],
     ),
 
     widget.Spacer(),
@@ -155,7 +181,7 @@ default = [
     widget.CPU(
         background=colours[theme][9],
         foreground=colours[theme][1],
-        format='  {load_percent}%',
+        format=' {load_percent}%',
         font=xf,
         fontsize=xx,
         **decor,
@@ -172,7 +198,7 @@ default = [
         foreground=colours[theme][1],
         measure_mem='G',
         measure_swap='G',
-        format=' {MemUsed: .2f} GB',
+        format='{MemUsed: .2f} GB',
         **decor,
     ),
     widget.TextBox(
@@ -212,7 +238,7 @@ default = [
     widget.Clock(
         foreground=colours[theme][1],
         background=colours[theme][8],
-        format='  %d %b, %a',
+        format=' %d %b, %a',
         font=xf,
         fontsize=xx,
         **decor,
@@ -227,7 +253,7 @@ default = [
         background=colours[theme][5],
         font=xf,
         fontsize=xx,
-        format='  %I:%M %p',
+        format=' %I:%M %p',
         **decor,
     ),
     widget.TextBox(
