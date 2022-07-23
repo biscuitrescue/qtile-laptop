@@ -5,7 +5,7 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 from qtile_extras import widget
 
-theme = "mocha"
+theme = "macchiato"
 
 colours = {
     "palenight": [
@@ -101,14 +101,14 @@ colours = {
     ],
 }
 
-rad = 9
+rad = 7
 decor = {
     "decorations": [
         RectDecoration(
             use_widget_background=True,
             radius=rad,
             filled=True,
-            padding_y=7,
+            padding_y=9,
         )
     ],
     "padding": 10,
@@ -119,7 +119,7 @@ decor1 = {
             use_widget_background=True,
             radius=[rad, 0, 0, rad],
             filled=True,
-            padding_y=7,
+            padding_y=9,
         )
     ],
     "padding": 10,
@@ -130,14 +130,14 @@ decor2 = {
             use_widget_background=True,
             radius=[0, rad, rad, 0],
             filled=True,
-            padding_y=7,
+            padding_y=9,
         )
     ],
     "padding": 10,
 }
 
 
-xx = 21
+xx = 22
 xf = "M Plus 1 Code Semi-Bold"
 default = [
     widget.GroupBox(
@@ -327,11 +327,9 @@ screens = [
     Screen(
         top=bar.Bar(
             default,
-            44,
+            48,
             background=colours[theme][1],
             foreground=colours[theme][1],
-            # margin=[6, 8, 2, 8],
-            # opacity=0.9
         ),
     ),
 ]
