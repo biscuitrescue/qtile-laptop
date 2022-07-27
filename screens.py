@@ -5,9 +5,22 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 from qtile_extras import widget
 
-theme = "palenight"
+theme = "purple"
 
 colours = {
+    "purple": [
+        ["#9CA5D6"],      # Colour 0
+        ["#20212C"],        # Colour 1
+        ["#f07178"],        # Colour 2
+        ["#98E886"],        # Colour 3
+        ["#FAEF83"],        # Colour 4
+        ["#CF9CF0"],        # Colour 5
+        ["#bb80b3"],        # Colour 6
+        ["#7EA6FA"],        # Colour 7
+        ["#BABFE0"],        # Colour 8
+        ["#ff8b92"],        # Colour 9
+        ["#ff6e6e"]        # Colour 10
+    ],
     "palenight": [
         ["#D8DEE9"],      # Colour 0
         ["#282d3e"],        # Colour 1
@@ -343,7 +356,7 @@ screens = [
             default,
             48,
             background=colours[theme][1],
-            foreground=colours[theme][1],
+            foreground=colours[theme][0],
         ),
     ),
 ]

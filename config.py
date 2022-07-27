@@ -7,9 +7,9 @@ from screens import screens
 # 96cdfb
 # d6acff
 border = dict(
-    border_focus="#96cdfb",
+    border_focus="#7EA6FA",
     border_normal="#4c566a",
-    border_width=3,
+    border_width=2,
 )
 layouts = [
     layout.Tile(

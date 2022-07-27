@@ -4,7 +4,7 @@ from libqtile.config import Group, Key, Match, ScratchPad, DropDown
 from libqtile.command import lazy
 from keys import keys
 
-myTerm = "kitty"
+myTerm = "kitty -o background_opacity=0.95"
 mod = "mod4"
 mod1 = "mod1"
 mod2 = "control"
@@ -98,7 +98,7 @@ for i in groups:
 groups.append(ScratchPad('Scratchpad', [
     DropDown("sig", "signal-desktop-beta", height=0.6,
              width=0.65, x=0.175, y=0.12, opacity=0.95),
-    DropDown("term", "kitty -o background_opacity=0.95",
+    DropDown("term", myTerm,
              # width=0.9, height=0.6,
              # x=0.05, y=0, opacity=1),
              width=0.75, height=0.9,
