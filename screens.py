@@ -5,7 +5,7 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 from qtile_extras import widget
 
-theme = "mocha"
+theme = "palenight"
 
 colours = {
     "palenight": [
@@ -233,7 +233,7 @@ default = [
         text="|",
         font=xf,
     ),
-    widget.PulseVolume(
+    widget.Volume(
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("pavucontrol")},
         background=colours[theme][3],
         foreground=colours[theme][1],
@@ -302,6 +302,7 @@ else:
                 percentage_low=0.5,
                 percentage_critical=0.3,
                 fill_critical="#ff0000",
+                fill_charge=colours[theme][3],
                 fill_low=colours[theme][4],
                 fill_normal=colours[theme][1],
                 background=colours[theme][7],

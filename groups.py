@@ -23,7 +23,7 @@ groups = [
           ),
 
 
-    Group("3", label="", layout="treetab",
+    Group("3", label="",
         matches=[
             Match(wm_class=["Zathura"]),
             Match(wm_class=["Evince"]),
@@ -98,7 +98,7 @@ for i in groups:
 groups.append(ScratchPad('Scratchpad', [
     DropDown("sig", "signal-desktop-beta", height=0.6,
              width=0.65, x=0.175, y=0.12, opacity=0.95),
-    DropDown("term", "kitty -o background_opacity=0.9",
+    DropDown("term", "kitty -o background_opacity=0.95",
              # width=0.9, height=0.6,
              # x=0.05, y=0, opacity=1),
              width=0.75, height=0.9,
@@ -113,7 +113,7 @@ groups.append(ScratchPad('Scratchpad', [
              x=0.05, y=0.05, opacity=0.95),
     DropDown("fmger", "nautilus",
              width=0.6, height=0.85,
-             x=0.2, y=0.075, opacity=0.9),
+             x=0.2, y=0.075, opacity=0.98),
     DropDown("spotify", "spotify", height=0.75, opacity=1,
              width=0.7, x=0.15, y=0.125),
     DropDown("fm", myTerm+' -e ranger',
