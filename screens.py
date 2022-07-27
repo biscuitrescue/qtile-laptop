@@ -5,7 +5,7 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 from qtile_extras import widget
 
-theme = "purple"
+theme = "palenight"
 
 colours = {
     "purple": [
@@ -14,8 +14,8 @@ colours = {
         ["#f07178"],        # Colour 2
         ["#98E886"],        # Colour 3
         ["#FAEF83"],        # Colour 4
-        ["#CF9CF0"],        # Colour 5
-        ["#bb80b3"],        # Colour 6
+        ["#bb80b3"],        # Colour 5
+        ["#CF9CF0"],        # Colour 6
         ["#7EA6FA"],        # Colour 7
         ["#BABFE0"],        # Colour 8
         ["#ff8b92"],        # Colour 9
@@ -309,8 +309,8 @@ else:
         [
             widget.UPowerWidget(
                 font=xf,
-                battery_width=23,
-                battery_height=10,
+                battery_width=27,
+                battery_height=14,
                 fontsize=xx,
                 percentage_low=0.5,
                 percentage_critical=0.3,
@@ -325,7 +325,7 @@ else:
                 text_charging="",
                 text_discharging="",
                 text_displaytime="",
-                margin=6,
+                margin=10,
                 **decor1,
             ),
             widget.Battery(
