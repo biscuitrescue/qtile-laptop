@@ -5,7 +5,7 @@ from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.bar import Bar
 from qtile_extras import widget
 
-theme = "purple"
+theme = "palenight"
 
 colours = {
     "purple": [
